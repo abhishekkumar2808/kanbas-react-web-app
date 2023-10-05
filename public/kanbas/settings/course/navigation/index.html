@@ -2,199 +2,361 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>GRADES
+    <title>Profile
     </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="../../../../vendors/fontawesome/css/fontawesome.css" rel="stylesheet"/>
+
+<link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
+    <link href=
+ "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" 
+ rel="stylesheet"/>
+    <link href="../../../../vendors/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../../vendors/fontawesome/css/all.css" rel="stylesheet"/>
+    <link href="../../../../vendors/fontawesome/css/fontawesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="index.css" />
 </head>
+<style>
+    /* Remove borders and lines from List Group */
+    .list-group-item {
+        border: none;
+     
+        border-radius: 0; /* Remove border-radius if present */
+    }
+</style>
 <body>
-    <table  width="100%">
-        <body>
-            <tr valign="top">
-                <td>
-                    <ul>
-                        <li><a href="../../../profile/edit.html">Account</a></li>
-                        <li><a href="">Dashboard</a></li>
-                        <li><a href="../../../home.html">Courses</a></li>
-                        <li><a href="">Calendar</a></li>
-                        <li><a href="">Inbox</a></li>
-                        <li><a href="">History</a></li>
-                        <li><a href="">Studio</a></li>
-                        <li><a href="">Commons</a></li>
-                        <li><a href="">Help</a></li>
-                    </ul>
-                </td>
 
-                <td>
-                    <ul>
-                        <li><a href="../../../home.html">Home</a></li>
-                        <li><a href="">Modules</a></li>
-                        <li><a href="">Piazza</a></li>
-                        <li><a href="">Zoom Meetings</a></li>
-                        <li><a href="../../../assignments/index.html">Assignments</a></li>
-                        <li><a href="">Quizzes</a></li>
-                        <li><a href="../../../grades.html">Grades</a></li>
-                        <li><a href="">people</a></li>
-                        <li><a href="">Panopto Video</a></li>
-                        <li><a href="">Discussions</a></li>
-                        <li><a href="">Announcements</a></li>
-                        <li><a href="">Pages</a></li>
-                        <li><a href="">Files</a></li>
-                        <li><a href="">Rubrics</a></li>
-                        <li><a href="">Outcomes</a></li>
-                        <li><a href="">Collaborations</a></li>
-                        <li><a href="">Syllabus</a></li>
-                        <li><a href="../details/index.html">Settings</a></li>
-                    </ul>
-                </td>
 
-                <td>
-                    <table width="100%">
-                        <thead>
-                            <tr>
-                                <td><a href="../details/index.html">Course Details</a></td>
-                                <td><a href="#">Sections</a></td>
-                                <td><a href="#">Navigation</a></td>
-                                <td><a href="#">Apps</a></td>
-                                <td><a href="#">Feature Options</a></td>
-                                <td><a href="#">Integrations</a></td>
-                            </tr>
-                        </thead>
-                        <tbody>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="sidebar col-1" style="position: fixed; width: 80px;" >
+                
+                    <div class="sidebar-item">
+                        <a  href="#"><img src="../../../../images/NEU.png" alt="NEU Logo" width="80px" height="80px"></a>
+                    </div>
+                    <div id="account" class="sidebar-item">
+                        <a href="../../../profile/index.html"><i s;" class="fas fa-2x fa-user"></i><br/>Account</a></li>
+                    </div>
+                    <div id="dashboard" class="sidebar-item">
+                        <a href="../../../dashboard/index.html"><i class="fa-solid fa-2x fa-gauge-high"></i><br/>Dashboard</a></li>
 
-                            <tr>
-                                <td colspan="6"><br/>Drag and drop items to reorder them in the course navigation.<br/><br/></td>
-                            </tr>
+                    </div>
+                    <div id="courses" class="sidebar-item">
+                        <a href="../courses/index.html"><i class="fas fa-2x fa-book"></i><br/>Courses</a></li>
 
-                            <table width="40%" border="1px">
+                    </div>
+                    <div id="calendar" class="sidebar-item">
+                        <a href=""><i class="fa fa-2x fa-calendar"></i><br/>Calendar</a></li>
+
+                    </div>
+                    <div id="inbox" class="sidebar-item">
+                        <a href=""><i class="fa  fa-2x fa-envelope-open-text"></i><br/>Inbox</a></li>
+
+                    </div>
+                    <div id="history" class="sidebar-item">
+                        <a href=""><i class="fa fa-2x fa-clock"></i><br/>History</a></li>
+
+                    </div>
+                    <div id="studio" class="sidebar-item">
+                        <a href=""><i class="fa fa-2x fa-tv"></i><br/>Studio</a></li>
+
+                    </div>
+                    <div id="commons" class="sidebar-item">
+                        <a href=""><i class="fa fa-2x fa-arrow-right"></i><br/>Commons</a></li>
+
+                    </div>
+                    <div id="help" class="sidebar-item">
+                        <a href=""><i class="far fa-2x fa-question-circle"></i><br/>Help</a></li>
+                    </div>
+                    
+            </div>
+            <div class="col-11" style="margin-left:60px ;">
+                
+                <div class="container-fluid">
+                    <div class="menu-name">
+                        <i class="fa fa-2x fa-bars"></i>
+                        <h3><span style="color: red;">CS4550.12631.202410</span> > Settings </h3>
+                    </div>
+
+                    <hr/>
+                    <div class="row">
+                        <div class="col-2" >
+                                    <div class="wd-sidebar">
+                                        <div class="list-group wd-profile-navigation">
+                                            <p class="list-group-item list-group-item-action " style="color: black; font-size:10px">202410_1 Fall2023 Semester...</p>
+                                            <a class="list-group-item list-group-item-action " href="">Home</a>
+                                            <a class="list-group-item list-group-item-action " href=""href="">Modules</a>
+                                            <a class="list-group-item list-group-item-action" href="">Piazza</a>
+                                            <a class="list-group-item list-group-item-action" href="">Zoom Meetings</a>
+                                            <a class="list-group-item list-group-item-action" href="../assignments/index.html">Assignments</a>
+                                            <a class="list-group-item list-group-item-action" href="">Quizzes</a>
+                                            <a class="list-group-item list-group-item-action" href="../grades.html">Grades</a>
+                                            <a class="list-group-item list-group-item-action" href="">People</a>
+                                            <a class="list-group-item list-group-item-action" href="">Panapto Video</a>
+                                            <div class="flex-container">
+                                                <a class="list-group-item list-group-item-action" href="">Discussions </a>
+                                                <div class="eye-shut-icon">
+                                                    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a class="list-group-item list-group-item-action" href="">Announcements</a>
+                                                <div class="eye-shut-icon">
+                                                    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a class="list-group-item list-group-item-action" href="">Pages</a>
+                                                <div class="eye-shut-icon">
+                                                    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a class="list-group-item list-group-item-action" href="">Files</a>
+                                                <div class="eye-shut-icon">
+                                                    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a class="list-group-item list-group-item-action" href="">Rubrics</a>
+                                                <div class="eye-shut-icon">
+                                                    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a class="list-group-item list-group-item-action" href="">Outcomes</a>
+                                                <div class="eye-shut-icon">
+                                                    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a class="list-group-item list-group-item-action" href="">Collaborations</a>
+                                                <div class="eye-shut-icon">
+                                                    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a class="list-group-item list-group-item-action" href="">Syllabus</a>
+                                                <div class="eye-shut-icon">
+                                                    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                            <a class="list-group-item list-group-item-action active" href="">Settings</a>
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class="col-10 ">
+                            <div class="container">
+                                <div class="navbar">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a class="nav-link " href="#">Course Details</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Sections</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">Navigation</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link " href="#" tabindex="-1">Apps</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Feature Options</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Integrations</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="nav-body col-5">
+                                    <div class="menu-list">
+                                        <p>Drag and drop items to reorder them in the course navigation.</p>
+                                        <div class="list-group">
+                                            <div class="flex-container">
+                                                <a href="../../../home.html">Home</a>
+                                                <div >
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a href="#">Modules</a>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a href="#">Piazza</a>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a href="#">Zoom Meetings</a>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a href="../../../assignments/index.html">Assignments</a>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a href="#">Quizzes</a>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a href="../../../grades.html">Grades</a>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a href="#">People</a>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <a href="#">Panopto Video</a>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            
+
+                                        </div>
+                                    </div>
+                                    <div class="hide-list-items">
+
+                                        <p>Drag items here to hide them from student. <br/>
+                                            Disabling most pages will cause students <br/>who visit those pages to be redirected to the course home page.</p>
+                                        <div class="list-group">
+                                            <div class="flex-container">
+                                                <p>Chat<br/><i>page disabled, won't appear in navigation</i></p>
+                                                <div >
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>SCORM<br/><i>page disabled, won't appear in navigation</i></p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>Attendance<br/><i>page disabled, won't appear in navigation</i></p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>Barnes and Noble Bookstore<br/><i>page disabled, won't appear in navigation</i></p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>Digication<br/><i>page disabled, won't appear in navigation</i></p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>Top Hat<br/><i>page disabled, won't appear in navigation</i></p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>Syllabus<br/><i>page disabled, won't appear in navigation</i></p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>Perusall<br/><i>page disabled, won't appear in navigation</i></p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>Microsoft Teams Meetings<br/><i>page disabled, won't appear in navigation</i></p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>FACT Reporting and Photo Roster<br/><i>page disabled, won't appear in navigation/i></p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>Progress Reports (Navigate)<br/><i>page disabled, won't appear in navigation</i><</p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>Microsoft Teams for Canvas<br/><i>page disabled, won't appear in navigation</i></p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>VHL Cenral<br/><i>page disabled, won't appear in navigation</i></p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>Gradescope 1.3<br/><i>page disabled, won't appear in navigation</i></p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>Credentials<br/><i>page disabled, won't appear in navigation</i></p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-container">
+                                                <p>iClicker<br/><i>page disabled, won't appear in navigation</i></p>
+                                                <div>
+                                                    <i class="fa-solid fa-ellipsis fa-rotate-90"></i>
+                                                </div>
+                                            </div>
+                                            
+
+                                        </div>
+
+                                    </div>
+                                    <div>
+
+                                    </div>
+                                </div>
                                 
-                                <tbody >
-                                    <tr>
-                                        <td ><a href="../../../home.html">Home</a></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#">Modules</a></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#">Piazza</a></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#">Zoom Meetings</a></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="../../../assignments/index.html">Assignments</a></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#">Quizzes</a></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="../../../grades.html">Grades</a></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#">People</a></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#">Panopto Video</a></td>
-                                        <td></td>
-                                    </tr>
 
-                                    
-                                </tbody>
-                            </table>
-
-                            <br/>Drag items here to hide them from student<br/>
-                                            Disabling most pages will cause students <br/>who visit those pages to be redirected to the course home page.
-                            
-                            <table width="40%" border="1px">
-                                <thead>
-                                    <tr> 
-                                        <td></td>
-                                    </tr>
-                                </thead>
-                                
-                                <tbody >
-                                    <tr>
-                                        <td ><br/>Chat<br/><i>page disabled, won't appear in navigation</i> </td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>SCORM<br/><i>page disabled, won't appear in navigation</i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Attendance<br/><i>page disabled, won't appear in navigation</i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Barnes and Noble Bookstore<br/><i>page disabled, won't appear in navigation</i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Digication<br/><i>page disabled, won't appear in navigation</i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Top Hat<br/><i>page disabled, won't appear in navigation</i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Syllabus<br/><i>page disabled, won't appear in navigation</i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Perusall<br/><i>page disabled, won't appear in navigation</i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Microsoft Teams Meetings<br/><i>page disabled, won't appear in navigation</i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>FACT Reporting and Photo Roster<br/><i>page disabled, won't appear in navigation/i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Progress Reports (Navigate)<br/><i>page disabled, won't appear in navigation</i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Microsoft Teams for Canvas<br/><i>page disabled, won't appear in navigation</i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>VHL Cenral<br/><i>page disabled, won't appear in navigation</i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gradescope 1.3<br/><i>page disabled, won't appear in navigation</i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Credentials<br/><i>page disabled, won't appear in navigation</i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>iClicker<br/><i>page disabled, won't appear in navigation</i></td>
-                                        <td width="70px"></td>
-                                    </tr>
-
-                                    <tr><td><button type="submit">Save</button></td></tr>
-
-                                   
-                                </tbody>
-
-                            </table>
+                            </div>
+                        </div>
+                        
+                    </div>
 
 
-                        </tbody>
+                </div>
+
+            </div>
 
 
-    </table>
+        </div>
+    </div>
 </body>
 </html>
