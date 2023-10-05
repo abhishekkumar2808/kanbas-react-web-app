@@ -120,13 +120,6 @@ color: red;
     justify-content: space-between;
 }
 
-.breadcrumb-container {
-    display: flex;
-    
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
 
 .breadcrumb{
     margin-bottom: 0px;

@@ -105,3 +105,24 @@ color: red;
 .menu-name i{
     margin-right: 30px;
 }
+
+.menu-name i{
+  margin-right: 30px;
+}
+
+.breadcrumb-container{
+  display: flex;
+  
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.breadcrumb{
+  margin-bottom: 0px;
+}
+
+.container.assign{
+  padding-right: 0px;
+}

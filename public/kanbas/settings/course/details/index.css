@@ -121,8 +121,32 @@ color: red;
 .nav-tabs .nav-item {
     color: red;
 }
+.nav-tabs .nav-item a {
+  color: red;
+}
+
+.menu-name{
+  display: flex;
+  margin-top: 20px;
+  flex-direction: row;
+  align-items: center;
+  
+}
 
 
+
+
+.breadcrumb-container{
+display: flex;
+
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+}
+
+.breadcrumb{
+  margin-bottom: 0px;
+}
 
 
 
