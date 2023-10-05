@@ -207,6 +207,10 @@ color: black;
 
 }
 
+.assign-body .assign-container{
+    border-left: 7px solid green;
+}
+
 
 
 

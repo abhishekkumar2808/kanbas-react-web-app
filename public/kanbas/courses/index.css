@@ -7,6 +7,22 @@
     
     
   }
+
+  .menu-name{
+    display: flex;
+    margin-top: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+}
+
+.top-header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
   
   .sidebar .sidebar-item {
 
@@ -125,4 +141,91 @@ color: red;
 
 .container.assign{
   padding-right: 0px;
+}
+
+
+.header-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(182, 172, 172);
+  
+}
+
+.assign-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  
+}
+
+.assign-body .list-group-item{
+border: 1px solid black;
+
+}
+
+.btn.header{
+  border-radius: 40px;
+}
+
+.list-group .icon-begin{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.list-group .icon-begin>span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  
+}
+
+
+
+.icon-begin a{
+text-decoration: none;
+color: black;
+}
+
+.assignment-content{
+
+  margin-bottom: 20px;
+
+}
+
+.assign-body .assign-container{
+  border-left: 7px solid green;
+}
+
+.course-options .list-group-item{
+  background-color: rgb(215, 206, 206);
+  margin-top: 7px;
+  border-radius: 2px;
+}
+
+.list-group.course-options{
+  margin-bottom: 12px;
+}
+
+.coming-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.coming-content i{
+  margin-right: 10px;
+}
+
+.coming-content .list-group-item{
+  border: none;
+  
+}
+
+.text-head{
+  margin-left: 80px;
 }
