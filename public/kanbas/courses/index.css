@@ -119,12 +119,10 @@ color: red;
 }
 
 .menu-name i{
-    margin-right: 30px;
+    margin-right: 10px;
 }
 
-.menu-name i{
-  margin-right: 30px;
-}
+
 
 .breadcrumb-container{
   display: flex;
