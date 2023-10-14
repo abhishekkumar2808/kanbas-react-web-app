@@ -24,12 +24,15 @@
 
 // export default App;
 import Labs from "./Labs";
+import HelloWorld from "./Labs/a3/HelloWorld"
+import Kanbas from './Kanbas/index'
 
 function App() {
   return (
     <div>
-      <h1>Hello World!</h1>
+      <HelloWorld />
       <Labs/>
+      <Kanbas />
     </div>
       
   );
