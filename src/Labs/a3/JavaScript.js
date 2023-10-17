@@ -2,6 +2,7 @@ import IfElse from "./IfElse";
 import TernaryOperator from "./TernaryOperator";
 import VariableTypes from "./VariableTypes";
 import VariablesAndConstants from "./VariablesAndConstants";
+import WorkingWithFunctions from "./WorkingWithFunctions";
 
 function JavaScript() {
 
@@ -13,6 +14,7 @@ function JavaScript() {
           <VariableTypes/>
           <IfElse/>
           <TernaryOperator/>
+          <WorkingWithFunctions/>
        </div>
     );
  }
