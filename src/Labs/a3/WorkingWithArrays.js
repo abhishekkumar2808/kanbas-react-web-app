@@ -1,4 +1,8 @@
+import AddingAndRemovingDataToFromArrays from "./AddingAndRemovingDataToFromArrays";
 import ArrayIndexAndLength from "./ArrayIndexAndLength";
+import ForLoops from "./ForLoops";
+import JsonStringify from "./JsonStringify";
+import MapFunction from "./MapFunction";
 
 function WorkingWithArrays() {
 
@@ -21,7 +25,13 @@ return (
             numberArray1 = {numberArray1}<br />
             stringArray1 = {stringArray1}<br />
             variableArray1 = {variableArray1} <br />
+
             <ArrayIndexAndLength/>
+            <AddingAndRemovingDataToFromArrays/>
+            <ForLoops/>
+            <MapFunction/>
+            <JsonStringify/>
+
             
     </>
 );
