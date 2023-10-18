@@ -10,6 +10,7 @@ import Spread from "./Spread";
 import Destructing from "./Destructing";
 import FunctionDestructing from "./FunctionDestructing";
 
+
 function JavaScript() {
 
     console.log("Hello World!");
@@ -27,6 +28,7 @@ function JavaScript() {
           <Spread/>
           <Destructing/>
           <FunctionDestructing/>
+          
        </div>
     );
  }
