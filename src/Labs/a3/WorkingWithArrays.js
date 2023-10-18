@@ -1,12 +1,16 @@
 import AddingAndRemovingDataToFromArrays from "./AddingAndRemovingDataToFromArrays";
 import ArrayIndexAndLength from "./ArrayIndexAndLength";
+import FilterFunction from "./FilterFunction";
+import FindFunction from "./FindFunction";
+import FindIndex from "./FindIndex";
 import ForLoops from "./ForLoops";
 import JsonStringify from "./JsonStringify";
 import MapFunction from "./MapFunction";
+import TemplateLiterals from "./TemplateLiterals";
 
 function WorkingWithArrays() {
 
-    var functionScoped = 2;
+    let functionScoped = 2;
 let blockScoped = 5;
 const constant1 = functionScoped - blockScoped;
 let numberArray1 = [1, 2, 3, 4, 5];
@@ -31,6 +35,10 @@ return (
             <ForLoops/>
             <MapFunction/>
             <JsonStringify/>
+            <FindFunction/>
+            <FindIndex/>
+            <FilterFunction/>
+            
 
             
     </>
