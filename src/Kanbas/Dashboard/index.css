@@ -1,0 +1,63 @@
+.sidebar {
+    display: flex;
+    flex-direction: column; /* Set the direction to column */
+    align-items: center; /* Center the items horizontally */
+    height: 100vh;
+    padding: 0%;
+    
+    
+  }
+  
+  .sidebar .sidebar-item {
+
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    background-color: black;
+    border: 0px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    
+  }
+
+  .sidebar .sidebar-item a{
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;
+    padding: 7px;
+  }
+
+  .sidebar-item i{
+color: red;
+  }
+
+
+
+  .dashboard-body{
+    margin: 5px;
+  }
+
+.dashboard-body .img{
+    padding: 0px;
+    margin: 0px;
+    height: 50px;
+}
+
+.card{
+    padding: 0px;
+    margin-top: 35px;
+    margin-right: 20px;
+    
+
+}
+
+.card-img-top{
+    height: 150px;
+}
+
+
+
