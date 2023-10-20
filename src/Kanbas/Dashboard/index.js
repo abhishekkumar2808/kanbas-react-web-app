@@ -17,8 +17,8 @@ function Dashboard() {
                 <div class="card-body">
                     <h5 class="card-title">{course.name}</h5>
                     <p class="card-text">{course.number}</p>
-                    <p class="card-text">{course.startDate}</p>
-                    <a href="../courses/index.html" class="btn btn-primary">Course page</a>
+                    <p class="card-text">{`Start Date: ${course.startDate}`}</p>
+                    <button class="btn btn-primary">Course page</button>
                 </div>
             </div>
           </Link>

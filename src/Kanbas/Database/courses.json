@@ -1,6 +1,6 @@
 [
     { "_id": "KHY001",
-      "name": "React", "number": "CS10001", "startDate": "2023-01-10", "endDate": "2023-05-15",
+      "name": "React", "number": "CS1001", "startDate": "2023-01-10", "endDate": "2023-05-15",
       "img-url": "../../images/react.png"
     },
 

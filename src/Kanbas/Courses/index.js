@@ -3,10 +3,13 @@ import { useParams } from "react-router-dom";
 import CourseNavigation from "./CourseNavigation"
 import {Routes, Route, Navigate} from "react-router";
 import Dashboard from "../Dashboard"
-
+import Modules from "./Modules";
 import {FaBars} from "react-icons/fa"
 import {FaGlasses} from "react-icons/fa6"
 import { useState } from "react";
+import Home from "./Home"
+import Assignments from "./Assignments";
+import AssignmentEditor from "./Assignments/AssignmentEditor";
 
 function Courses() {
   const { id } = useParams();
@@ -55,14 +58,11 @@ function Courses() {
                         }}
                       >
                             <Routes>
-                              
-                              <Route path="Home" element={<h1>Home</h1>} />
-                              <Route path="Modules" element={<h1>Modules</h1>} />
-                              <Route path="Assignments" element={<h1>Assignments</h1>} />
-                              <Route
-                                path="Assignments/:assignmentId"
-                                element={<h1>Assignment Editor</h1>}
-                              />
+                              <Route path="/" element={<Navigate to="Home" />} />
+                              <Route path="Home" element={<Home/>} />
+                              <Route path="/Modules" element={<Modules/>} />
+                              <Route path="Assignments" element={<Assignments/>} />
+                              <Route path="Assignments/:assignmentId" element={<AssignmentEditor/>}/>
                               <Route path="Grades" element={<h1>Grades</h1>} />
                             </Routes>
                       </div>
