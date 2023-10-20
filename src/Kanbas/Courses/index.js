@@ -1,8 +1,9 @@
 import db from "../../Kanbas/Database";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CourseNavigation from "./CourseNavigation"
 import {Routes, Route, Navigate} from "react-router";
-import Dashboard from "../Dashboard"
+
 import Modules from "./Modules";
 import {FaBars} from "react-icons/fa"
 import {FaGlasses} from "react-icons/fa6"
@@ -10,6 +11,7 @@ import { useState } from "react";
 import Home from "./Home"
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
+import Grades from "../Grades";
 
 function Courses() {
   const { id } = useParams();
@@ -28,7 +30,7 @@ function Courses() {
                       <FaBars/>
                       <nav aria-label="breadcrumb" style={{marginLeft:5}}>
                           <ol class="breadcrumb" style={{margin:0}}>
-                            <li class="breadcrumb-item"><a href="../courses/index.html" style={{textDecoration:"none", color:"red"}}>{`${courseID} ${course.name}`}</a></li>
+                            <li class="breadcrumb-item"><Link to={`Home`} style={{textDecoration:"none", color:"red"}} onClick={()=>(setNavItem("Home"))}>{`${courseID} ${course.name}`}</Link></li>
                             
                             <li class="breadcrumb-item active" aria-current="page">{navItem}</li>
                           </ol>
@@ -63,7 +65,7 @@ function Courses() {
                               <Route path="/Modules" element={<Modules/>} />
                               <Route path="Assignments" element={<Assignments/>} />
                               <Route path="Assignments/:assignmentId" element={<AssignmentEditor/>}/>
-                              <Route path="Grades" element={<h1>Grades</h1>} />
+                              <Route path="Grades" element={<Grades />} />
                             </Routes>
                       </div>
                   </div>

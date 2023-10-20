@@ -1,0 +1,140 @@
+
+
+.container-fluid.main-body{
+    margin-left: 10px;
+}
+
+.menu-name i{
+    margin-right: 30px;
+}
+
+.breadcrumb-container{
+    display: flex;
+    
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.breadcrumb-container {
+    display: flex;
+    
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.breadcrumb{
+    margin-bottom: 0px;
+}
+
+.container.assign{
+    padding-right: 0px;
+}
+
+
+
+
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.wd-sidebar .flex-container .eye-shut-icon {
+    display: flex;
+    justify-content: center; /* Horizontally center the child */
+    align-items: center; /* Vertically center the child */
+}
+
+.nav-tabs .nav-item a {
+    color: red;
+}
+
+.search-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+ 
+
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(182, 172, 172);
+    
+}
+
+.assign-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    
+}
+
+.assign-body .list-group-item{
+border: 1px solid black;
+
+}
+
+.btn.header{
+    border-radius: 40px;
+}
+
+.list-group .icon-begin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.list-group .icon-begin>span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    
+}
+
+.icon-begin button{
+text-decoration: none;
+color: black;
+}
+
+.assignment-content{
+
+    margin-bottom: 20px;
+
+}
+
+
+.top-header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.icons button{
+    margin-left: 5px;
+}
+
+.edit-body .table{
+border-radius: 0px;
+}
+
+.edit-body table th,
+.edit-body table td {
+            text-align: center;
+        }
+
