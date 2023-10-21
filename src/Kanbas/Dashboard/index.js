@@ -18,7 +18,7 @@ function Dashboard() {
                     <h5 class="card-title">{course.name}</h5>
                     <p class="card-text">{course.number}</p>
                     <p class="card-text">{`Start Date: ${course.startDate}`}</p>
-                    <button class="btn btn-primary">Course page</button>
+                    <button style={{width: "100%"}} class="btn btn-primary">Course page</button>
                 </div>
             </div>
           </Link>
