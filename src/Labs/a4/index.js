@@ -24,6 +24,7 @@ const Assignment4 = () => {
    <>
    <div className="container-fluid">
       <h1>Assignment 4</h1>
+      <ReduxExamples/>
       <Add a={1} b={2} />
       <ClickEvent/>
       <PassingDataOnEvent/>
@@ -36,7 +37,7 @@ const Assignment4 = () => {
       <ObjectStateVariable/>
       <ArrayStateVariable/>
       <ParentStateComponent/>
-      <ReduxExamples/>
+      
 
    </div>
      
