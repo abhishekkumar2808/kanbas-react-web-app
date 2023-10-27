@@ -1,7 +1,11 @@
 import Modules from "../Modules";
+import {FaCalendarAlt} from "react-icons/fa"
 
 
 function Home() {
+
+  const rightBarItems = ["Import Existing Content","Import from Commons", "Choose Home Page", "View Course Stream", "View Announcements", "New Analytics", "View Course Notification"]
+  const toDoItems = ["Web Lecture", "Web Assignment", "Web Lecture 2", "Web Quiz", "Web Project", "Web Quiz 2"]
   return (
     <div className="row">
         <div className="col-9">
@@ -21,15 +25,16 @@ function Home() {
                                 </div>
 
                                 <div class="list-group course-options">
-                                    <a  class="list-group-item list-group-item-action " aria-current="true">
-                                      Import Existing Content
-                                    </a>
-                                    <a  class="list-group-item list-group-item-action">Import from Commons</a>
-                                    <a  class="list-group-item list-group-item-action">Choose Home Page</a>
-                                    <a  class="list-group-item list-group-item-action">View Course Stream</a>
-                                    <a  class="list-group-item list-group-item-action " tabindex="-1" aria-disabled="true">View Announcements</a>
-                                    <a  class="list-group-item list-group-item-action">New Analytics</a>
-                                    <a  class="list-group-item list-group-item-action">View Course Notification</a>
+                                    {
+                                        rightBarItems.map(
+                                            (item) =>
+                                                <button 
+                                                    key={item}
+                                                    className="list-group-item list-group-item-action">{item}</button>
+                                            
+                                        )
+                                    }
+
                                 </div>
 
                                 <div class="todo">
@@ -46,7 +51,7 @@ function Home() {
                                             <span><b>To Do</b></span>
                                         </div>
                                         <div>
-                                            <p><i class="fa-solid fa-calendar"></i> Calendar</p>
+                                            <p><FaCalendarAlt style={{marginRight:8}}/>Calendar</p>
                                         </div>
                                     </div>
 
@@ -54,12 +59,14 @@ function Home() {
                                     
                                     <div class="coming-content">
                                         <ul class="list-group">
-                                            <li class="list-group-item"><i  class="fa-solid fa-calendar"></i>Web Lecture</li>
-                                            <li class="list-group-item"><i class="fa-solid fa-calendar"></i>Web Assignment</li>
-                                            <li class="list-group-item"><i class="fa-solid fa-calendar"></i>Web Lecture 2</li>
-                                            <li class="list-group-item"><i class="fa-solid fa-calendar"></i>Web Quiz</li>
-                                            <li class="list-group-item"><i class="fa-solid fa-calendar"></i>Web Project</li>
-                                            <li class="list-group-item"><i class="fa-solid fa-calendar"></i>Web Quiz 2</li>
+                                        {
+                                            toDoItems.map(
+                                                item => 
+                                                <li 
+                                                    key={item}
+                                                    className="list-group-item"><FaCalendarAlt style={{marginRight:8}}/>{item}</li>
+                                            )
+                                        }
                                           </ul>
                                     </div>
 
