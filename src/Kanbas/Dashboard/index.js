@@ -8,7 +8,7 @@ function Dashboard() {
     <div className="container-fluid">
       <h2 >Dashboard</h2>
       <hr/>
-      <h2>Published Courses(8)</h2>
+      <h2>Published Courses({courses.length})</h2>
       <div className="row flex-wrap row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4" style={{marginBottom:10, marginLeft:0}}>
         {courses.map((course) => (
           <Link key={course._id} to={`/Kanbas/Courses/${course._id}`} className="list-group-item" style={{width: "250px", marginRight: "20px"}}>

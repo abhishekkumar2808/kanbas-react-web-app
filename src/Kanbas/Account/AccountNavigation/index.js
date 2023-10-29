@@ -1,14 +1,13 @@
 
 import { Link, useLocation  } from "react-router-dom";
-
+import "./index.css"
 import {FaEyeSlash} from "react-icons/fa6"
 
 function CourseNavigation({navItem, setNavItem}) {
     const { pathname } = useLocation();
 
-    const navbarItems =[ "Home",  "Modules", "Piazza", "Zoom Meetings", "Assignments", "Quizzes", "Grades", "People", "Panapto Video", "Discussions", "Anouncements", "Pages", "Files", "Rubrics", "Outcomes", "Collaborations", "Syllabus", "Settings",
-   
-]
+    const navbarItems =[ "Notifications",  "Profile", "Files", "Settings", "ePortfolios", "Shared Content", "The Hub", "Quickly Course Tools", "Global Announcements"]
+
 console.log(pathname)
 
     return (
@@ -18,22 +17,20 @@ console.log(pathname)
                 <div class="list-group wd-profile-navigation">
                     {
                         navbarItems.map((item,index) => (
-                            <div className="flex-container">
+                            
                     
                                 <Link
                                     to={`${item.split(' ').join('')}`}
                                     key={index}
                                     className= {`list-group-item ${pathname.includes(item.split(' ').join('')) && "active"}`} 
-                                    onClick={()=>(setNavItem(item))}
+                                    onClick={() =>setNavItem("item")}
                                     >
                                     {item}
                                 </Link>
 
-                                <div>
-                                    {(index > (navbarItems.length-6)) && <FaEyeSlash style={{color:"black"}}/>} 
-                                </div>
                                 
-                            </div>
+                                
+                            
                             
                                 
                         ))
