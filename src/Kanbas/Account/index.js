@@ -4,8 +4,8 @@ import { useState } from "react";
 import {Routes, Route, Navigate} from "react-router";
 import {FaBars} from "react-icons/fa"
 import AccountNavigation from "./AccountNavigation";
-import Profile from "./Profile";
-import Edit from "./Profile/edit";
+ import Profile from "./Profile";
+ import Edit from "./Profile/edit";
 
 
 function Account() {
@@ -51,6 +51,7 @@ function Account() {
                               <Route path="/Files" element={<h1>Files</h1>}/>
                               <Route path="/Profile/Edit/" element={<Edit />}/>
                             </Routes>
+                            {/* <h1>Hiii</h1> */}
                       </div>
                   </div>
 

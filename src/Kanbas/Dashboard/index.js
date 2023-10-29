@@ -6,7 +6,7 @@ function Dashboard() {
   const courses = db.courses;
   return (
     <div className="container-fluid">
-      <h2 >Dashboard</h2>
+      <h2 style={{margin:0}}>Dashboard</h2>
       <hr/>
       <h2>Published Courses({courses.length})</h2>
       <div className="row flex-wrap row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4" style={{marginBottom:10, marginLeft:0}}>

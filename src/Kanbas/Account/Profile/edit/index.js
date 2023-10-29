@@ -1,6 +1,7 @@
-import "./index.css"
+import "./edit.css"
 import { Link } from "react-router-dom";
 import {FaPencilAlt, FaUserCircle} from "react-icons/fa"
+import { right } from "@popperjs/core";
 
 function Edit() {
     
@@ -9,7 +10,7 @@ function Edit() {
     
     
     <div className="row">
-        <div class="col-10" style={{paddingRight:0}}>
+        <div class="col-10" >
 
             <form class="edit-profile-form row">
                 <div class="col-12">
@@ -84,7 +85,7 @@ function Edit() {
                 </div>
                 
                 <hr/>
-                <div class="flex-container" style={{padding:0}}>
+                <div class="flex-container-buttons" style={{padding:0}}>
                     
                     <Link to="/Kanbas/Account/Profile/" class="btn btn-light text-nowrap" style={{marginLeft: 10}}  href="index.html" role="button">Cancel</Link>
                     <Link to="/Kanbas/Account/Profile/" class="btn btn-danger text-nowrap" style={{marginLeft: 10}} href="index.html" role="button">Save Profile</Link>  
@@ -93,7 +94,7 @@ function Edit() {
 
             </form>
         </div>
-        <div class="col-2" style={{paddingRight: 0}}>
+        <div class="col-2 d-flex justify-content-end" >
             <Link to="/Kanbas/Account/Profile/">
             <button class="btn btn-primary text-nowrap"  href="" ><FaPencilAlt style={{marginRight:8}}/>Cancel Editing</button>
             </Link>

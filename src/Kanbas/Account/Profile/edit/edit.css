@@ -1,0 +1,25 @@
+
+
+.edit-profile-form .col-12{
+  margin-bottom: 20px;
+  width: 75%;
+}
+
+.flex-container-buttons{
+  display: flex;
+  justify-content: flex-end; /* Buttons will be at the right end */
+  align-items: center; /* Center items vertically */
+  padding: 10px; /* Add some spacing */
+}
+
+.list-group-item {
+    border: none;
+ 
+    border-radius: 0; /* Remove border-radius if present */
+}
+.mandatory-star {
+    color: red; /* Change the color to your preference */
+    font-size: 18px; /* Adjust the font size if needed */
+    margin-left: 3px;
+   
+}
