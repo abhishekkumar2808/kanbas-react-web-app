@@ -19,9 +19,9 @@ function Courses({courses, setCourses}) {
   const [navItem, setNavItem] = useState("Home");
   const course = courses.find((course) => course._id === id);
   console.log("in courses coure list: "+ JSON.stringify(courses))
-  // console.log("in courses: "+ course)
+
   const courseID = course.number
-  console.log("coursenumber: "+ courseID)
+
 
   const [tempCourses, settempCourses] = useState(courses);
   console.log("courses temp:"+JSON.stringify(tempCourses));
@@ -68,7 +68,7 @@ function Courses({courses, setCourses}) {
                       >
                             <Routes>
                               <Route path="/" element={<Navigate to="Home" />} />
-                              <Route path="/Home" element={<Home/>} />
+                              <Route path="/Home" element={<Home tempCourses={tempCourses}/>} />
                               <Route path="/Modules" element={<Modules tempCourses={tempCourses}/>} />
                               <Route path="/Assignments" element={<Assignments/>} />
                               <Route path="/Assignments/:assignmentId" element={<AssignmentEditor/>}/>

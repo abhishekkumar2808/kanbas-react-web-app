@@ -6,8 +6,8 @@ import "./index.css"
 
 
 function Modules({tempCourses}) {
+  
   console.log("courses in Modules: "+JSON.stringify(tempCourses))
-  //console.log("module : "+ JSON.stringify(Object.keys(courses)))
   return (
     <>
         <div className="option-bar" style={{marginBottom:20}}>

@@ -2,14 +2,14 @@ import Modules from "../Modules";
 import {FaCalendarAlt} from "react-icons/fa"
 
 
-function Home() {
+function Home({tempCourses}) {
 
   const rightBarItems = ["Import Existing Content","Import from Commons", "Choose Home Page", "View Course Stream", "View Announcements", "New Analytics", "View Course Notification"]
   const toDoItems = ["Web Lecture", "Web Assignment", "Web Lecture 2", "Web Quiz", "Web Project", "Web Quiz 2"]
   return (
     <div className="row">
         <div className="col-9">
-            <Modules />
+            <Modules  tempCourses={tempCourses}/>
         </div>
         <div className="col-3">
         <div class="container">

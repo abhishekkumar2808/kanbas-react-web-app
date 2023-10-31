@@ -7,17 +7,19 @@ import {FaCheck, FaPlus} from "react-icons/fa"
 
 
 function ModuleList({courses}) {
+
   const { id } = useParams();
-  console.log("courses in ML: "+JSON.stringify(courses))
-  //const courseID = course.number;
-  // console.log("course number: "+courseID.number)
+
+  const chosenCourse = courses.find((course) => course._id === id);
+  const courseNumber = chosenCourse.number;
+
 
   const modules = db.modules;
   return (
     <div className="list-group">
       {
        
-        modules.filter((module) => module.course === 111)
+        modules.filter((module) => module.course === courseNumber)
                 .map((module, index) => (
                 <div key={index} className="modules-list-item" style={{marginBottom:35}}>
                     <div className="module-name" >
