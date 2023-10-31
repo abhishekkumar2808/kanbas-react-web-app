@@ -1,9 +1,6 @@
-import db from "../../Kanbas/Database";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useParams,  Link  } from "react-router-dom";
 import CourseNavigation from "./CourseNavigation"
 import {Routes, Route, Navigate} from "react-router";
-
 import Modules from "./Modules";
 import {FaBars} from "react-icons/fa"
 import {FaGlasses} from "react-icons/fa6"
@@ -13,12 +10,22 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "../Grades";
 
-function Courses() {
+function Courses({courses, setCourses}) {
   const { id } = useParams();
-  console.log(id)
+
+  console.log("courses in Courses: "+JSON.stringify(courses))
+  console.log("course iddd:"+id)
+
   const [navItem, setNavItem] = useState("Home");
-  const course = db.courses.find((course) => course._id === id);
+  const course = courses.find((course) => course._id === id);
+  console.log("in courses coure list: "+ JSON.stringify(courses))
+  // console.log("in courses: "+ course)
   const courseID = course.number
+  console.log("coursenumber: "+ courseID)
+
+  const [tempCourses, settempCourses] = useState(courses);
+  console.log("courses temp:"+JSON.stringify(tempCourses));
+
   return (
 
     <div>
@@ -62,7 +69,7 @@ function Courses() {
                             <Routes>
                               <Route path="/" element={<Navigate to="Home" />} />
                               <Route path="/Home" element={<Home/>} />
-                              <Route path="/Modules" element={<Modules/>} />
+                              <Route path="/Modules" element={<Modules tempCourses={tempCourses}/>} />
                               <Route path="/Assignments" element={<Assignments/>} />
                               <Route path="/Assignments/:assignmentId" element={<AssignmentEditor/>}/>
                               <Route path="/Grades" element={<Grades />} />

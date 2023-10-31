@@ -3,23 +3,35 @@ import {Routes, Route, Navigate} from "react-router";
 import Dashboard from "./Dashboard"
 import Courses from "./Courses/index.js";
 import Account from "./Account/index.js";
+import React, { useState } from 'react';
+import Sidebar from "./Sidebar";
+import db from "./Database";
 
 function Kanbas() {
 
+  
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [courses, setCourses] = useState(db.courses);
+  console.log("courses in canbas: "+JSON.stringify(courses))
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   return (
     <div className="d-flex">
           <div className="col-1" style={{position: "fixed"}}>
-            <KanbasNavigation/>
+            <KanbasNavigation toggleSidebar={toggleSidebar}/>
           </div>
           
           <div className="col-11 container-fluid" style={{marginLeft: "110px", marginBottom:"10px"}}>
-            
+            <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar}/>
             <Routes>
               <Route path="/" element={<Navigate to="Dashboard" />} />
               <Route path="/Account/*" element={<Account/>} />
-              <Route path="/Dashboard" element={<Dashboard />} />
-              <Route path="/Courses/:id/*" element={<Courses/>} />
+              <Route path="/Dashboard" element={<Dashboard courses={courses} setCourses={setCourses}/>} />
+              <Route path="/Courses/:id/*" element={<Courses courses={courses} setCourses={setCourses}/>} />
               <Route path="/Calendar" element={<h1>Calendar</h1>} />
               <Route path="/Inbox" element={<h1>Inbox</h1>} />
               <Route path="/History" element={<h1>History</h1>} />

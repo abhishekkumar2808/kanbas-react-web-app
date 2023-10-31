@@ -6,18 +6,18 @@ import {FaEllipsisVertical} from "react-icons/fa6"
 import {FaCheck, FaPlus} from "react-icons/fa"
 
 
-function ModuleList() {
+function ModuleList({courses}) {
   const { id } = useParams();
-
-  const courseID = db.courses.find((course)=>(course._id === id))
-  console.log("course number: "+courseID.number)
+  console.log("courses in ML: "+JSON.stringify(courses))
+  //const courseID = course.number;
+  // console.log("course number: "+courseID.number)
 
   const modules = db.modules;
   return (
     <div className="list-group">
       {
        
-        modules.filter((module) => module.course === courseID.number)
+        modules.filter((module) => module.course === 111)
                 .map((module, index) => (
                 <div key={index} className="modules-list-item" style={{marginBottom:35}}>
                     <div className="module-name" >

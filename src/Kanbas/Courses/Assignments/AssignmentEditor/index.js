@@ -42,18 +42,18 @@ function AssignmentEditor() {
              className="form-control mb-2" />
 
 
-                <div className="cancel-save">
-                        <Link to={`/Kanbas/Courses/${id}/Assignments`}
-                                className="btn btn-danger" style={{marginRight:5}}>
+                <div className="cancel-save" >
+                        <Link to={`/Kanbas/Courses/${id}/Assignments`} 
+                                className="btn btn-danger" style={{marginRight:5, width:"8%"}}>
                             Cancel
                         </Link>
-                        <button onClick={handleSave} className="btn btn-success" style={{marginRight:0}}>
+                        <button onClick={handleSave} className="btn btn-success" style={{marginRight:0, width:"8%"}}>
                             Save
                         </button>
                 </div>
    
 
-
+               
     </div>
   );
 }

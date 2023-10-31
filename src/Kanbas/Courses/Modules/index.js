@@ -5,7 +5,9 @@ import "./index.css"
 
 
 
-function Modules() {
+function Modules({tempCourses}) {
+  console.log("courses in Modules: "+JSON.stringify(tempCourses))
+  //console.log("module : "+ JSON.stringify(Object.keys(courses)))
   return (
     <>
         <div className="option-bar" style={{marginBottom:20}}>
@@ -23,7 +25,7 @@ function Modules() {
         
         <div style={{paddingBottom:10}}>
             
-            <ModuleList />
+            <ModuleList courses={tempCourses} />
         </div>
       
     </>
