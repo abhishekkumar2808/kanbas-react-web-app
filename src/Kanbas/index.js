@@ -13,7 +13,7 @@ function Kanbas() {
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [courses, setCourses] = useState(db.courses);
-  console.log("courses in canbas: "+JSON.stringify(courses))
+
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -26,7 +26,9 @@ function Kanbas() {
           </div>
           
           <div className="col-11 container-fluid" style={{marginLeft: "110px", marginBottom:"10px"}}>
+
             <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} courses={courses}/>
+            
             <Routes>
               <Route path="/" element={<Navigate to="Dashboard" />} />
               <Route path="/Account/*" element={<Account/>} />

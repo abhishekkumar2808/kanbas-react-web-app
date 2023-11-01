@@ -33,3 +33,21 @@
     border: 5px solid black;
 }
 
+.module-name-icons-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 7px;
+}
+
+.mod{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.module-name-icons-buttons button{
+    margin-left: 6px;
+}
+

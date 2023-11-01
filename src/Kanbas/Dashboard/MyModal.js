@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 
 const MyModal = ({showModal, setShowModal, type, data, setNewCourse, courses, setCourses}) => {
   
@@ -42,13 +42,13 @@ const editFunc = () => {
 }
 
   return (
-    <>
+    
 
     
       
 
       <div className={`modal ${showModal ? 'show' : ''}`} tabIndex="-1" data-bs-backdrop="static" style={{ display: showModal ? 'block' : 'none' }}>
-        <div className="modal-dialog" role='document'>
+        <div className="modal-dialog" >
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title">{`${type} Course`} </h5>
@@ -56,21 +56,21 @@ const editFunc = () => {
             </div>
             <div className="modal-body">
                 <form>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Name:</label>
-                        <input type="text" class="form-control" id="recipient-name" placeholder='Node JS' value={data.name} onChange={(e) => setNewCourse({ ...data, name: e.target.value }) }/>
+                    <div className="form-group">
+                        <label for="recipient-name" className="col-form-label">Name:</label>
+                        <input type="text" className="form-control" id="recipient-name" placeholder='Node JS' value={data.name} onChange={(e) => setNewCourse({ ...data, name: e.target.value }) }/>
                     </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Number:</label>
-                        <input type="text" class="form-control" id="recipient-name" placeholder='CS1001' value={data.number} onChange={(e) => setNewCourse({ ...data, number: e.target.value }) }/>
+                    <div className="form-group">
+                        <label for="recipient-name" className="col-form-label">Number:</label>
+                        <input type="text" className="form-control" id="recipient-name" placeholder='CS1001' value={data.number} onChange={(e) => setNewCourse({ ...data, number: e.target.value }) }/>
                     </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Start Date:</label>
-                        <input type="text" class="form-control" id="recipient-name" placeholder='YYYY-MM-DD' value={data.startDate} onChange={(e) => setNewCourse({ ...data, startDate: e.target.value }) } />
+                    <div className="form-group">
+                        <label for="recipient-name" className="col-form-label">Start Date:</label>
+                        <input type="text" className="form-control" id="recipient-name" placeholder='YYYY-MM-DD' value={data.startDate} onChange={(e) => setNewCourse({ ...data, startDate: e.target.value }) } />
                     </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">End Date:</label>
-                        <input type="text" class="form-control" id="recipient-name" placeholder='YYYY-MM-DD' value={data.endDate} onChange={(e) => setNewCourse({ ...data, endDate: e.target.value }) }/>
+                    <div className="form-group">
+                        <label for="recipient-name" className="col-form-label">End Date:</label>
+                        <input type="text" className="form-control" id="recipient-name" placeholder='YYYY-MM-DD' value={data.endDate} onChange={(e) => setNewCourse({ ...data, endDate: e.target.value }) }/>
                     </div>
                 </form>
             </div>
@@ -93,7 +93,7 @@ const editFunc = () => {
           </div>
         </div>
       </div>
-    </>
+    
   );
 };
 

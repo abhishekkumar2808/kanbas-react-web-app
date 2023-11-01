@@ -13,18 +13,17 @@ import Grades from "../Grades";
 function Courses({courses, setCourses}) {
   const { id } = useParams();
 
-  console.log("courses in Courses: "+JSON.stringify(courses))
-  console.log("course iddd:"+id)
+
 
   const [navItem, setNavItem] = useState("Home");
   const course = courses.find((course) => course._id === id);
-  console.log("in courses coure list: "+ JSON.stringify(courses))
+
 
   const courseID = course.number
 
 
   const [tempCourses, settempCourses] = useState(courses);
-  console.log("courses temp:"+JSON.stringify(tempCourses));
+
 
   return (
 
