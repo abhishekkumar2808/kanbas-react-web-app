@@ -1,7 +1,9 @@
+import { addModule, updateModule } from "./modulesReducer";
+import { useDispatch } from "react-redux";
 
-const FormModule = ({showModal, setShowModal, module, setModule, modules, setModules, courseNumber, type}) => {
+const FormModule = ({showModal, setShowModal, module, setModule, modules, courseNumber, type}) => {
 
-
+  const dispatch = useDispatch();
 
   function resetModuleData() {
 
@@ -11,48 +13,29 @@ const FormModule = ({showModal, setShowModal, module, setModule, modules, setMod
       description: "New Description",
       course: courseNumber,
     }
-    setModule(t);
-
+    dispatch(setModule(t));
+    ;
   }
 
-  const addModule = () => {
-    setModules([
-      ...modules,
-      { ...module, _id: new Date().getTime().toString() },
-        
-    ]);
-
+  const addMod = () => {
     setShowModal(!showModal);
+    dispatch(addModule(module));
+
+    
     resetModuleData();
 
   
     
   };
 
-  const editModule = () => {
+  const editMod = () => {
 
     setShowModal(false);
-    resetModuleData();
-    setModules(
-        modules.map((m) => {
-          if (m._id === module._id) {
-            return module;
-          } else {
-            return m;
-          }
-        })
-      );
+    dispatch(updateModule(module));
+    resetModuleData()
   }
 
-
-
-
-
-
-
-
-
-    return(
+  return(
         <div className={`modal ${showModal ? 'show' : ''}`} id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style={{ display: showModal ? 'block' : 'none' }}>
               <div className="modal-dialog">
                 <div className="modal-content">
@@ -64,19 +47,24 @@ const FormModule = ({showModal, setShowModal, module, setModule, modules, setMod
                       <form>
                         <div className="form-group">
                             <label for="module-name" className="col-form-label">Name:</label>
-                            <input type="text" className="form-control" id="module-name" placeholder='New Module Name' value={module.name} onChange={(e) => setModule({ ...module, name: e.target.value }) }/>
+                            <input type="text" className="form-control" id="module-name" placeholder='New Module Name' value={module.name} onChange={(e) => dispatch(setModule({ ...module, name: e.target.value })) }/>
                         </div>
                         <div className="form-group">
                             <label for="module-desc" className="col-form-label">Number:</label>
-                            <input type="text" className="form-control" id="moudle-desc" placeholder='New Module Description' value={module.description} onChange={(e) => setModule({ ...module, description: e.target.value }) }/>
+                            <input type="text" className="form-control" id="moudle-desc" placeholder='New Module Description' value={module.description} onChange={(e) => dispatch(setModule({ ...module, description: e.target.value })) }/>
                         </div>
 
                     </form>
                   </div>
                   <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {resetModuleData(); setShowModal(!showModal)}} >Close</button>
+                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" 
+                    onClick={() => 
+                        { resetModuleData(); 
+                          setShowModal(!showModal)
+                        }
+                    } >Close</button>
                     <button type="button" className="btn btn-primary" 
-                    onClick={(type === 'add')? addModule : editModule} >{type}</button>
+                    onClick={(type === 'add')? addMod : editMod} >{type}</button>
                   </div>
                 </div>
               </div>
