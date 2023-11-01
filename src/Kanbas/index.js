@@ -22,11 +22,11 @@ function Kanbas() {
   return (
     <div className="d-flex">
           <div className="col-1" style={{position: "fixed"}}>
-            <KanbasNavigation toggleSidebar={toggleSidebar}/>
+            <KanbasNavigation toggleSidebar={toggleSidebar} />
           </div>
           
           <div className="col-11 container-fluid" style={{marginLeft: "110px", marginBottom:"10px"}}>
-            <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar}/>
+            <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} courses={courses}/>
             <Routes>
               <Route path="/" element={<Navigate to="Dashboard" />} />
               <Route path="/Account/*" element={<Account/>} />

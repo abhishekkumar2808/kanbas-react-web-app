@@ -28,4 +28,16 @@
     padding: 10px;
     cursor: pointer;
   }
+
+  .sidebar-link{
+
+    text-decoration: none;
+    color: red;
+  }
+
+  .sidebar-item {
+    margin-left: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
   

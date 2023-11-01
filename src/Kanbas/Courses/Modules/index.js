@@ -2,11 +2,19 @@ import ModuleList from "./ModuleList";
 import {FaEllipsisVertical} from "react-icons/fa6"
 import {FaRegCheckCircle} from "react-icons/fa"
 import "./index.css"
+import db from "../../Database";
+import { useParams } from "react-router-dom";
 
 
 
 function Modules({tempCourses}) {
-  
+
+  const { id } = useParams();
+  const chosenCourse = tempCourses.find((course) => course._id === id);
+  const courseNumber = chosenCourse.number;
+  const modules = db.modules;
+  const courseModule = modules.filter((module) => module.course === courseNumber);
+
   console.log("courses in Modules: "+JSON.stringify(tempCourses))
   return (
     <>
@@ -23,7 +31,7 @@ function Modules({tempCourses}) {
         
      
         
-        <div style={{paddingBottom:10}}>
+        <div className={(courseModule.length === 0)? "d-flex":"" } style={{paddingBottom:10,  justifyContent:(courseModule.length === 0)? "center":""}}>
             
             <ModuleList courses={tempCourses} />
         </div>

@@ -15,33 +15,45 @@ function ModuleList({courses}) {
 
 
   const modules = db.modules;
-  return (
-    <div className="list-group">
-      {
-       
-        modules.filter((module) => module.course === courseNumber)
-                .map((module, index) => (
-                <div key={index} className="modules-list-item" style={{marginBottom:35}}>
-                    <div className="module-name" >
-                        <div className="mod">
-                          
-                          <h3>{module.name}</h3>
-                        </div>
-                        <div>
-                        <FaCheck style={{color:"#24c421"}}/>
-                        <FaEllipsisVertical/>
-                        </div>
-                        
-                    </div>
-                    <div className="module-desc" style={{padding:6}}>
-                        <p>{module.description}</p>
-                    </div>
-                    
-                    
-                </div>
-      ))
-      }
-    </div>
-  );
+  const courseModule = modules.filter((module) => module.course === courseNumber);
+
+  if(courseModule.length) {
+    return (
+      <div className="list-group">
+        {
+          
+  
+              modules.filter((module) => module.course === courseNumber)
+                                    .map((module, index) => (
+                                        <div key={index} className="modules-list-item" style={{marginBottom:35}}>
+                                            <div className="module-name" >
+                                                <div className="mod">
+                                                  
+                                                  <h3>{module.name}</h3>
+                                                </div>
+                                                <div>
+                                                <FaCheck style={{color:"#24c421"}}/>
+                                                <FaEllipsisVertical/>
+                                                </div>
+                                                
+                                            </div>
+                                            <div className="module-desc" style={{padding:6}}>
+                                                <p>{module.description}</p>
+                                            </div>
+  
+                                        </div>
+                             ))
+        }
+      </div>
+    );
+  }
+  else {
+    return (
+      <div className="error-div" style={{ border: '5px solid #000', color:"red", display: 'inline-block'}}>
+          <h2 style={{margin:5}}>NO DATA AVAILABLE</h2>
+      </div>
+    );
+  }
+
 }
 export default ModuleList;
