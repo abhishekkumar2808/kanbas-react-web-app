@@ -57,19 +57,19 @@ const editFunc = () => {
             <div className="modal-body">
                 <form>
                     <div className="form-group">
-                        <label for="recipient-name" className="col-form-label">Name:</label>
+                        <label htmlFor="recipient-name" className="col-form-label">Name:</label>
                         <input type="text" className="form-control" id="recipient-name" placeholder='Node JS' value={data.name} onChange={(e) => setNewCourse({ ...data, name: e.target.value }) }/>
                     </div>
                     <div className="form-group">
-                        <label for="recipient-name" className="col-form-label">Number:</label>
+                        <label htmlFor="recipient-name" className="col-form-label">Number:</label>
                         <input type="text" className="form-control" id="recipient-name" placeholder='CS1001' value={data.number} onChange={(e) => setNewCourse({ ...data, number: e.target.value }) }/>
                     </div>
                     <div className="form-group">
-                        <label for="recipient-name" className="col-form-label">Start Date:</label>
+                        <label htmlFor="recipient-name" className="col-form-label">Start Date:</label>
                         <input type="text" className="form-control" id="recipient-name" placeholder='YYYY-MM-DD' value={data.startDate} onChange={(e) => setNewCourse({ ...data, startDate: e.target.value }) } />
                     </div>
                     <div className="form-group">
-                        <label for="recipient-name" className="col-form-label">End Date:</label>
+                        <label htmlFor="recipient-name" className="col-form-label">End Date:</label>
                         <input type="text" className="form-control" id="recipient-name" placeholder='YYYY-MM-DD' value={data.endDate} onChange={(e) => setNewCourse({ ...data, endDate: e.target.value }) }/>
                     </div>
                 </form>

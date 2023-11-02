@@ -1,7 +1,8 @@
 import { addModule, updateModule } from "./modulesReducer";
 import { useDispatch } from "react-redux";
 
-const FormModule = ({showModal, setShowModal, module, setModule, modules, courseNumber, type}) => {
+
+const FormModule = ({showModal, setShowModal, module, setModule, courseNumber, type}) => {
 
   const dispatch = useDispatch();
 
@@ -19,7 +20,8 @@ const FormModule = ({showModal, setShowModal, module, setModule, modules, course
 
   const addMod = () => {
     setShowModal(!showModal);
-    dispatch(addModule(module));
+    console.log("moddddddd: "+ JSON.stringify(module))
+    dispatch(addModule({...module, course: courseNumber}));
 
     
     resetModuleData();
@@ -50,21 +52,21 @@ const FormModule = ({showModal, setShowModal, module, setModule, modules, course
                             <input type="text" className="form-control" id="module-name" placeholder='New Module Name' value={module.name} onChange={(e) => dispatch(setModule({ ...module, name: e.target.value })) }/>
                         </div>
                         <div className="form-group">
-                            <label for="module-desc" className="col-form-label">Number:</label>
+                            <label for="module-desc" className="col-form-label">Description:</label>
                             <input type="text" className="form-control" id="moudle-desc" placeholder='New Module Description' value={module.description} onChange={(e) => dispatch(setModule({ ...module, description: e.target.value })) }/>
                         </div>
 
                     </form>
                   </div>
                   <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" 
+                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" style={{width:"14%"}}
                     onClick={() => 
                         { resetModuleData(); 
                           setShowModal(!showModal)
                         }
                     } >Close</button>
-                    <button type="button" className="btn btn-primary" 
-                    onClick={(type === 'add')? addMod : editMod} >{type}</button>
+                    <button type="button" className="btn btn-primary" style={{width:"14%"}}
+                    onClick={(type === 'Add')? addMod : editMod} >{type}</button>
                   </div>
                 </div>
               </div>

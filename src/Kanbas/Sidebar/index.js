@@ -19,9 +19,10 @@ const Sidebar = ({ isOpen, onClose, courses }) => {
             {
               courses.map(course => {
                 
-                return(
-                  <div>
+                return( 
+               
                           <Link 
+                            key={`${course._id}`}
                             className='sidebar-link'
                             to={`Courses/${course._id}/Home`}
                             onClick={() => onClose()}>
@@ -30,7 +31,7 @@ const Sidebar = ({ isOpen, onClose, courses }) => {
                               </div>
                           </Link>
 
-                  </div>
+                  
                       )
                 
               })

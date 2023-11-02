@@ -10,6 +10,7 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "../Grades";
 
+
 function Courses({courses, setCourses}) {
   const { id } = useParams();
 
@@ -25,20 +26,21 @@ function Courses({courses, setCourses}) {
   const [tempCourses, settempCourses] = useState(courses);
 
 
+
   return (
 
     <div>
 
 
-            <div class="menu-name">
+            <div className="menu-name">
 
-                  <div class="breadcrumb-container">
+                  <div className="breadcrumb-container">
                       <FaBars/>
                       <nav aria-label="breadcrumb" style={{marginLeft:5}}>
-                          <ol class="breadcrumb" style={{margin:0}}>
-                            <li class="breadcrumb-item"><Link to={`Home`} style={{textDecoration:"none", color:"red"}} onClick={()=>(setNavItem("Home"))}>{`${courseID} ${course.name}`}</Link></li>
+                          <ol className="breadcrumb" style={{margin:0}}>
+                            <li className="breadcrumb-item"><Link to={`Home`} style={{textDecoration:"none", color:"red"}} onClick={()=>(setNavItem("Home"))}>{`${courseID} ${course.name}`}</Link></li>
                             
-                            <li class="breadcrumb-item active" aria-current="page">{navItem}</li>
+                            <li className="breadcrumb-item active" aria-current="page">{navItem}</li>
                           </ol>
                       </nav>
                   </div>

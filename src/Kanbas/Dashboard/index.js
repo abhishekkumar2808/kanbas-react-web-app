@@ -41,7 +41,7 @@ console.log("courses in dashboard: "+ JSON.stringify(courses))
                           event.preventDefault();
                           setShowAddModal(!showAddModal)
                           }
-            }>Add Courses</button>
+            }>+ Add Courses</button>
       </div>
       
       <div className="row flex-wrap row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4" style={{marginBottom:10, marginLeft:0}}>

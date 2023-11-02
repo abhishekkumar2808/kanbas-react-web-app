@@ -5,6 +5,7 @@ import "./index.css"
 import db from "../../Database";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 
 
@@ -15,7 +16,7 @@ function Modules({tempCourses}) {
   const { id } = useParams();
   const chosenCourse = tempCourses.find((course) => course._id === id);
   const courseNumber = chosenCourse.number;
-  const modules = db.modules;
+  const modules = useSelector((state) => state.modulesReducer.modules);
   const courseModule = modules.filter((module) => module.course === courseNumber);
 
   const [showModal, setShowModal] = useState(false);

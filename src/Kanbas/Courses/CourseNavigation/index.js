@@ -12,10 +12,8 @@ function CourseNavigation({navItem, setNavItem}) {
 console.log(pathname)
 
     return (
-        <>
-            
-            <div class="wd-sidebar">
-                <div class="list-group wd-profile-navigation">
+        <div className="wd-sidebar">
+                <div className="list-group wd-profile-navigation">
 
                  
                     {
@@ -43,7 +41,6 @@ console.log(pathname)
                     }          
                 </div>
             </div>
-        </>
     );
 }
 
