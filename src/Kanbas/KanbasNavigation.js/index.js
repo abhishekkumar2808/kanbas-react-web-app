@@ -5,7 +5,7 @@ import {FaQuestionCircle} from "react-icons/fa"
 
 
 
-function KanbasNavigation({toggleSidebar}) {
+function KanbasNavigation({toggleSidebar, isSidebarOpen}) {
 
   const { pathname } = useLocation();
 
@@ -74,8 +74,8 @@ const navItems = [
                                 <Link
                                 key={index}
                                 to={`/Kanbas/${item.name}`}
-                                className={`sidebar-item ${pathname.includes(item.name) && "active"}`}
-                                onClick={(item.name === "Courses") && ((event) => { console.log("item: "+ item); toggleSidebar();})}>
+                                className={`sidebar-item ${(pathname.includes(item.name) || isSidebarOpen) && "active"}`}
+                                onClick={(item.name === "Courses") && ((event) => { event.preventDefault();console.log("item: "+ item); toggleSidebar();})}>
                                 <div>
                                     <Url style={{color:"red", fontSize: 27}}/>
                                 </div>
