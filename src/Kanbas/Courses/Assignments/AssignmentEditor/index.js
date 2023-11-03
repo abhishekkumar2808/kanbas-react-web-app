@@ -8,7 +8,9 @@ import { useSelector, useDispatch } from "react-redux";
 import {updateAssignment, addAssignment, setAssignment} from "../assignmentsReducer";
 
 function AssignmentEditor() {
-  const { assignmentId } = useParams();
+
+
+
 
   
   
@@ -43,7 +45,8 @@ function AssignmentEditor() {
       
     }
 
-    dispatch(setAssignment({ title: "New assignment", description: "New Description", dueDate: "", availableFromDate:"", availableUntilDate:""}))
+    dispatch(setAssignment({ title: "New assignment", description: "New Description", points:"", dueDate: "", availableFromDate:"", availableUntilDate:""}))
+    console.log("after edit/add assigmnet var: "+ JSON.stringify(assignment));
     navigate(`/Kanbas/Courses/${id}/Assignments`);
   };
   return (

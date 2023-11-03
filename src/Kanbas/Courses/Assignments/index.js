@@ -11,7 +11,7 @@ import { setAssignment } from "./assignmentsReducer";
 
 
 function Assignments() {
-    const navigate = useNavigate();
+
     const dispatch = useDispatch();
 
 
@@ -38,7 +38,7 @@ function Assignments() {
                     <input type="text" className="form-control w-25" placeholder="Search for Assignment"/>
                     <div className="float-end">
                         <button className="btn btn-light text-nowrap"   >+Group</button> 
-                        <Link to={`/Kanbas/Courses/${id}/Assignments/${assignment._id}`}><button className="btn btn-danger text-nowrap">+ Assignment</button></Link>
+                        <Link to={`/Kanbas/Courses/${id}/Assignments/${assignment._id}`}><button className="btn btn-danger text-nowrap" onClick={() => dispatch(setAssignment({ title: "New assignment", description: "New Description",points:"", dueDate: "", availableFromDate:"", availableUntilDate:""}))}>+ Assignment</button></Link>
                         <button className="btn btn-light text-nowrap"  ><FaEllipsisVertical/></button> 
                     </div>
                 </div>
