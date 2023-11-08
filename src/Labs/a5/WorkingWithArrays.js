@@ -4,6 +4,8 @@ import axios from "axios";
 function WorkingWithArrays() {
     const API = "http://localhost:4000/a5/todos";
 
+    const [errorMessage, setErrorMessage] = useState(null);
+
     const [todo, setTodo] = useState({
         id: 1,
         title: "NodeJS Assignment",
@@ -40,6 +42,44 @@ function WorkingWithArrays() {
         `${API}/${todo.id}/title/${todo.title}`);
       setTodos(response.data);
     };
+
+    const postTodo = async () => {
+      console.log("saa: "+JSON.stringify(todo))
+      const response = await axios.post(API, todo);
+      setTodos([...todos, response.data]);
+    };
+
+    const deleteTodo = async (todo) => {
+      try{
+        const response = await axios.delete(`${API}/${todo.id}`);
+        setTodos(todos.filter((t) => t.id !== todo.id));
+      }
+      catch(error) {
+        console.log(error);
+        setErrorMessage(error.response.data.message);
+  
+      }
+      
+    };
+
+    
+  const updateTodo = async () => {
+    try {
+      const response = await axios.put(
+        `${API}/${todo.id}`, todo);
+      setTodos(todos.map((t) => (
+        t.id === todo.id ? todo : t)));
+      setTodo({});
+    } catch (error) {
+      console.log(error);
+      setErrorMessage(error.response.data.message);
+
+    }
+
+  };
+
+  
+  
   
   
   
@@ -64,29 +104,75 @@ function WorkingWithArrays() {
         onChange={(e) => setTodo({ ...todo,
           title: e.target.value })} />
 
-        <button onClick={createTodo} 
+        {/* <button onClick={createTodo} 
               className="btn btn-primary mb-2 w-100">
               Create Todo
+        </button> */}
+
+        
+        <textarea
+        onChange={(e) => setTodo({ ...todo,
+          description: e.target.value })}
+        value={todo.description} type="text"
+        />
+        <br/>
+        <input
+          onChange={(e) => setTodo({
+            ...todo, due: e.target.value })}
+          value={todo.due} type="date"
+        />
+        <br/>
+        <label>
+          <input
+            onChange={(e) => setTodo({
+              ...todo, completed: e.target.checked })}
+            value={todo.completed} type="checkbox"
+          /> Completed
+        </label>
+        <br/>
+        <button onClick={postTodo} className="btn btn-primary" >
+          Post Todo
         </button>
         <button onClick={updateTitle}
               className="btn btn-success mb-2 w-100"> 
           Update Title
         </button>
+        <br/>
+
+        <div>
+          
+          {errorMessage && (
+            <div className="alert alert-danger mb-2 mt-2">
+              {errorMessage}
+            </div>
+          )}
+          
+        </div>
+
         <ul className="list-group">
-        {todos.map((todo) => (
-          <li key={todo.id}
-              className="list-group-item">
+        {todos.map((tod) => (
+          <li key={tod.id}
+              className="list-group-item-action" onClick={() => setTodo({...tod})}>
+              <div >
               <button
-              onClick={() => removeTodo(todo)}
-              className="btn btn-danger float-end" >
-              Remove
-              </button>
-              <button
-              onClick={() => fetchTodoById(todo.id)}
-              className="btn btn-warning me-2 float-end" >
-              Edit
-            </button>
-            {todo.title}
+                  onClick={() => deleteTodo(tod)}
+                  className="btn btn-danger float-end ms-2">
+                  Delete
+                </button>
+                <button  className="btn btn-warning float-end ms-2"
+                onClick={() => {setTodo({...todo, id: tod.id}); updateTodo();}}>
+                Update Todo
+                </button>
+                <input
+                  checked={tod.completed}
+                  type="checkbox" readOnly
+                />
+                {tod.title}
+                <p>{tod.description}</p>
+                <p>{tod.due}</p>
+              </div>
+
+            
           </li>
         ))}
       </ul>
