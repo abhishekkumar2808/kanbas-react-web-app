@@ -64,12 +64,12 @@ function WorkingWithArrays() {
         onChange={(e) => setTodo({ ...todo,
           title: e.target.value })} />
 
-        <button onClick={createTodo}
+        <button onClick={createTodo} 
               className="btn btn-primary mb-2 w-100">
               Create Todo
         </button>
         <button onClick={updateTitle}
-              className="btn btn-success mb-2 w-100">
+              className="btn btn-success mb-2 w-100"> 
           Update Title
         </button>
         <ul className="list-group">
