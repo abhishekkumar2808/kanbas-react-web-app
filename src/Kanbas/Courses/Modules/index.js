@@ -11,13 +11,15 @@ import { useSelector, useDispatch } from "react-redux";
 
 
 
-function Modules({tempCourses}) {
+function Modules({course}) {
 
-  const { id } = useParams();
-  const chosenCourse = tempCourses.find((course) => course._id === id);
-  const courseNumber = chosenCourse.number;
+  // const { id } = useParams();
+  // const chosenCourse = tempCourses.find((course) => course._id === id);
+  // console.log("modules temp courses: "+ tempCourses)
+  // console.log("modules temp: "+ chosenCourse)
+  // const courseNumber = chosenCourse.number;
   const modules = useSelector((state) => state.modulesReducer.modules);
-  const courseModule = modules.filter((module) => module.course === courseNumber);
+  const courseModule = modules.filter((module) => module.course === course.number);
 
   const [showModal, setShowModal] = useState(false);
 
@@ -44,7 +46,7 @@ function Modules({tempCourses}) {
         
         <div className={(courseModule.length === 0)? "d-flex":"" } style={{paddingBottom:10,  justifyContent:(courseModule.length === 0)? "center":""}}>
             
-            <ModuleList courses={tempCourses} showModal={showModal} setShowModal={setShowModal}/>
+            <ModuleList course={course} showModal={showModal} setShowModal={setShowModal}/>
         </div>
       
     </>

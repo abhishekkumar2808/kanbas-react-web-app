@@ -4,26 +4,41 @@ import {Routes, Route, Navigate} from "react-router";
 import Modules from "./Modules";
 import {FaBars} from "react-icons/fa"
 import {FaGlasses} from "react-icons/fa6"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Home from "./Home"
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "../Grades";
+import axios from "axios";
 
 
-function Courses({courses, setCourses}) {
+function Courses({courses}) {
   const { id } = useParams();
 
-
+  const URL = "http://localhost:4000/api/courses";
 
   const [navItem, setNavItem] = useState("Home");
-  const course = courses.find((course) => course._id === id);
+
+  const [course, setCourse] = useState({});
+
+  const findCourseById = async (courseId) => {
+    const response = await axios.get(`${URL}/${courseId}`);
+    setCourse(response.data);
+  };
+
+  ;
+
+  useEffect(() => {
+    findCourseById(id)
+  }, [id]);
 
 
-  const courseID = course.number
+
+  
 
 
-  const [tempCourses, settempCourses] = useState(courses);
+  console.log("course page courses props: "+ courses)
+  // const [tempCourses, settempCourses] = useState(courses);
 
 
 
@@ -38,7 +53,7 @@ function Courses({courses, setCourses}) {
                       <FaBars/>
                       <nav aria-label="breadcrumb" style={{marginLeft:5}}>
                           <ol className="breadcrumb" style={{margin:0}}>
-                            <li className="breadcrumb-item"><Link to={`Home`} style={{textDecoration:"none", color:"red"}} onClick={()=>(setNavItem("Home"))}>{`${courseID} ${course.name}`}</Link></li>
+                            <li className="breadcrumb-item"><Link to={`Home`} style={{textDecoration:"none", color:"red"}} onClick={()=>(setNavItem("Home"))}>{`${course.number} ${course.name}`}</Link></li>
                             
                             <li className="breadcrumb-item active" aria-current="page">{navItem}</li>
                           </ol>
@@ -69,8 +84,8 @@ function Courses({courses, setCourses}) {
                       >
                             <Routes>
                               <Route path="/" element={<Navigate to="Home" />} />
-                              <Route path="/Home" element={<Home tempCourses={tempCourses}/>} />
-                              <Route path="/Modules" element={<Modules tempCourses={tempCourses}/>} />
+                              <Route path="/Home" element={<Home course={course}/>} />
+                              <Route path="/Modules" element={<Modules course={course}/>} />
                               <Route path="/Assignments" element={<Assignments/>} />
                               <Route path="/Assignments/:assignmentId" element={<AssignmentEditor/>}/>
                               <Route path="/Grades" element={<Grades />} />

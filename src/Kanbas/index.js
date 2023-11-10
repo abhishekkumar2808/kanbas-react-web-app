@@ -3,23 +3,39 @@ import {Routes, Route, Navigate} from "react-router";
 import Dashboard from "./Dashboard"
 import Courses from "./Courses/index.js";
 import Account from "./Account/index.js";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from "./Sidebar";
 import db from "./Database";
 import { Provider } from "react-redux";
 import store from "./store/index.js";
+import axios from "axios";
 
 function Kanbas() {
 
   
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [courses, setCourses] = useState(db.courses);
+  const [courses, setCourses] = useState([]);
+
+  const URL = "http://localhost:4000/api/courses";
+
+  const findAllCourses = async () => {
+
+    const response = await axios.get(URL);
+    setCourses(response.data);
+  };
+
+  useEffect(() => {
+    findAllCourses();
+  }, []);
+
 
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  console.log("kanbas coursees props: "+ courses)
 
   return (
     <Provider store={store}>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./index.css"
 import { useState } from "react";
 import MyModal from "./MyModal";
+import axios from "axios";
 
 
 function Dashboard({courses, setCourses}) {
@@ -17,12 +18,19 @@ function Dashboard({courses, setCourses}) {
 
   })
 
-console.log("courses in dashboard: "+ JSON.stringify(courses))
+  const URL = "http://localhost:4000/api/courses";
 
 
-  const deleteCourse = (id) =>{
+
+
+  const deleteCourse = async (id) =>{
+
+      const response = axios.delete(`${URL}/${id}`);
+
       setCourses(courses.filter((val) => (val._id !== id)))
   }
+
+
   return (
     <div className="container-fluid">
       

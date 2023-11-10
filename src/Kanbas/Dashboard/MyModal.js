@@ -1,6 +1,8 @@
-
+import axios from "axios";
 
 const MyModal = ({showModal, setShowModal, type, data, setNewCourse, courses, setCourses}) => {
+
+  const URL = "http://localhost:4000/api/courses";
   
     const resetData =() =>{
         const t = {
@@ -14,32 +16,38 @@ const MyModal = ({showModal, setShowModal, type, data, setNewCourse, courses, se
 
     }
 
-    const addFunc = () => {
-    console.log(JSON.stringify(data));
+    const addFunc = async () => {
+
+    
+    const response = await axios.post(URL, data);
+    response.data && console.log("coursedsf: "+ JSON.stringify(response.data));
 
     setShowModal(false)
     resetData();
-    setCourses([...courses,{_id: (new Date().getTime()).toString(), ...data }]);
-}
+    setCourses([...courses, response.data]);
+    }
 
-const editFunc = () => {
+    const editFunc =async () => {
 
-    console.log(JSON.stringify(data));
+        console.log(JSON.stringify(data));
+        
+
+        setShowModal(false);
+        resetData();
+
+        const response = await axios.put(`${URL}/${data._id}`, data);
     
-
-    setShowModal(false);
-    resetData();
-    setCourses(
-        courses.map((c) => {
-          if (c._id === data._id) {
-            return data;
-          } else {
-            return c;
-          }
-        })
-      );
-  
-}
+        setCourses(
+            courses.map((c) => {
+              if (c._id === data._id) {
+                return data;
+              } else {
+                return c;
+              }
+            })
+          );
+      
+    }
 
   return (
     

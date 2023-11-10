@@ -12,20 +12,20 @@ import {
 
 
 
-function ModuleList({courses, showModal, setShowModal}) {
+function ModuleList({course, showModal, setShowModal}) {
 
   const modules = useSelector((state) => state.modulesReducer.modules);
   const module = useSelector((state) => state.modulesReducer.module);
   const dispatch = useDispatch();
 
-  console.log("list of modules: "+ JSON.stringify(modules));
+  // console.log("list of modules: "+ JSON.stringify(modules));
 
-  const { id } = useParams();
+  // const { id } = useParams();
 
-  const chosenCourse = courses.find((course) => course._id === id);
-  const courseNumber = chosenCourse.number;
+  // const chosenCourse = courses.find((course) => course._id === id);
+  // const courseNumber = chosenCourse.number;
 
-  const courseModules = modules.filter((module) => module.course === courseNumber);
+  const courseModules = modules.filter((module) => module.course === course.number);
 
   const [editModal, setEditModal] = useState(false);
 
@@ -34,8 +34,8 @@ function ModuleList({courses, showModal, setShowModal}) {
       <>
         {
           <>
-         {showModal && <FormModule showModal={showModal} setShowModal={setShowModal} module={module} setModule={setModule} courseNumber={courseNumber} type="Add"/>}
-          {editModal && <FormModule showModal={editModal} setShowModal={setEditModal} module={module} setModule={setModule} courseNumber={courseNumber} type="Edit"/>}
+         {showModal && <FormModule showModal={showModal} setShowModal={setShowModal} module={module} setModule={setModule} courseNumber={course.number} type="Add"/>}
+          {editModal && <FormModule showModal={editModal} setShowModal={setEditModal} module={module} setModule={setModule} courseNumber={course.number} type="Edit"/>}
           </>
           
 
@@ -86,7 +86,7 @@ function ModuleList({courses, showModal, setShowModal}) {
     return (
       <>
         {
-            showModal && <FormModule showModal={showModal} setShowModal={setShowModal} module={module} setModule={setModule} courseNumber={courseNumber} type="Add"/>
+            showModal && <FormModule showModal={showModal} setShowModal={setShowModal} module={module} setModule={setModule} courseNumber={course.number} type="Add"/>
         }
         <div className="error-div" style={{ border: '5px solid #000', color:"red", display: 'inline-block'}}>
           <h2 style={{margin:5}}>NO DATA AVAILABLE</h2>
