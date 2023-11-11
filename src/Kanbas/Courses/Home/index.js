@@ -12,19 +12,19 @@ function Home({course}) {
             <Modules  course={course}/>
         </div>
         <div className="col-3">
-        <div class="container">
+        <div className="container">
                                 <p>Course Status</p>
 
-                                <div class="row" style={{marginBottom:10}}>
-                                    <div class="col">
-                                        <a style={{width:"100%"}} class="btn btn-light text-nowrap"  href="index.html" role="button"><i class="fa-solid fa-ban"></i> Unpublish</a>
+                                <div className="row" style={{marginBottom:10}}>
+                                    <div className="col">
+                                        <button style={{width:"100%"}} className="btn btn-light text-nowrap"  ><i className="fa-solid fa-ban"></i> Unpublish</button>
                                     </div>
-                                    <div class="col">
-                                        <a style={{width:"100%"}} class="btn btn-light text-nowrap"  href="index.html" role="button"><i class="fa-solid fa-check" style={{color:"#24c421"}}></i> Published</a>
+                                    <div className="col">
+                                        <button style={{width:"100%"}} className="btn btn-light text-nowrap"  ><i className="fa-solid fa-check" style={{color:"#24c421"}}></i> Published</button>
                                     </div>
                                 </div>
 
-                                <div class="list-group course-options">
+                                <div className="list-group course-options">
                                     {
                                         rightBarItems.map(
                                             (item) =>
