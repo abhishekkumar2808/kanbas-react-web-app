@@ -1,6 +1,9 @@
 import { addModule, updateModule } from "./modulesReducer";
 import { useDispatch } from "react-redux";
 
+import { createModule } from "./client";
+import * as client from "./client";
+
 
 const FormModule = ({showModal, setShowModal, module, setModule, courseNumber, type}) => {
 
@@ -20,20 +23,18 @@ const FormModule = ({showModal, setShowModal, module, setModule, courseNumber, t
 
   const addMod = () => {
     setShowModal(!showModal);
-    console.log("moddddddd: "+ JSON.stringify(module))
-    dispatch(addModule({...module, course: courseNumber}));
 
-    
+    createModule(courseNumber, module).then((mod) => {
+      dispatch(addModule(mod));
+    });
+
     resetModuleData();
-
-  
-    
   };
 
-  const editMod = () => {
+  const editMod = async () => {
 
     setShowModal(false);
-    dispatch(updateModule(module));
+    await client.updateModule(module).then((stat) => {dispatch(updateModule(module))});
     resetModuleData()
   }
 

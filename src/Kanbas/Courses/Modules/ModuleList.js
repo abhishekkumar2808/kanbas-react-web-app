@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./index.css"
 import {FaEllipsisVertical} from "react-icons/fa6"
@@ -8,24 +8,36 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   deleteModule,
   setModule,
+  setModules
 } from "./modulesReducer";
+import { findModulesForCourse } from "./client";
+import * as client from "./client";
 
 
 
 function ModuleList({course, showModal, setShowModal}) {
 
-  const modules = useSelector((state) => state.modulesReducer.modules);
-  const module = useSelector((state) => state.modulesReducer.module);
+
   const dispatch = useDispatch();
 
-  // console.log("list of modules: "+ JSON.stringify(modules));
+  useEffect(() => {
+    findModulesForCourse(course.number)
+      .then((modules) =>
+        dispatch(setModules(modules))
+    );
+  }, [course.number]);
 
-  // const { id } = useParams();
+  const modules = useSelector((state) => state.modulesReducer.modules);
+  const module = useSelector((state) => state.modulesReducer.module);
 
-  // const chosenCourse = courses.find((course) => course._id === id);
-  // const courseNumber = chosenCourse.number;
+  const deleteModuleHandler = (modID) => {
+    client.deleteModule(modID).then((status) => {
+      dispatch(deleteModule(modID));
+    });
 
-  const courseModules = modules.filter((module) => module.course === course.number);
+  };
+
+  const courseModules = modules;
 
   const [editModal, setEditModal] = useState(false);
 
@@ -54,7 +66,7 @@ function ModuleList({course, showModal, setShowModal}) {
                                 </div>
                                 <div className="module-name-icons-buttons">
                                   <div style={{marginRight:10, margin:10}}>
-                                    <button className="btn btn-danger" onClick={() => dispatch(deleteModule(mod._id))} style={{width:"70px"}}>Delete</button>
+                                    <button className="btn btn-danger" onClick={() => deleteModuleHandler(mod._id)} style={{width:"70px"}}>Delete</button>
                                     <button className="btn btn-warning" 
                                     onClick={() =>{
                                         

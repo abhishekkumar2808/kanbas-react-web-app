@@ -13,11 +13,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 function Modules({course}) {
 
-  // const { id } = useParams();
-  // const chosenCourse = tempCourses.find((course) => course._id === id);
-  // console.log("modules temp courses: "+ tempCourses)
-  // console.log("modules temp: "+ chosenCourse)
-  // const courseNumber = chosenCourse.number;
   const modules = useSelector((state) => state.modulesReducer.modules);
   const courseModule = modules.filter((module) => module.course === course.number);
 
