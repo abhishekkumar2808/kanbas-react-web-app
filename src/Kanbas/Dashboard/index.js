@@ -71,7 +71,7 @@ function Dashboard({courses, setCourses}) {
                           deleteCourse(course._id)}
                         }>Delete</button>
 
-                      <button style={{width:"47%"}}  className="btn btn-warning" 
+                      <button style={{width:"47%"}}  className="btn btn-primary" 
                       onClick={
                         (event) => {
                           console.log("state value:"+ showModal)

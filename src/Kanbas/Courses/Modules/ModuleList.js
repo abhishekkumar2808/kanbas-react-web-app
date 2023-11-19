@@ -67,7 +67,7 @@ function ModuleList({course, showModal, setShowModal}) {
                                 <div className="module-name-icons-buttons">
                                   <div style={{marginRight:10, margin:10}}>
                                     <button className="btn btn-danger" onClick={() => deleteModuleHandler(mod._id)} style={{width:"70px"}}>Delete</button>
-                                    <button className="btn btn-warning" 
+                                    <button className="btn btn-primary" 
                                     onClick={() =>{
                                         
                                         dispatch(setModule(mod))
