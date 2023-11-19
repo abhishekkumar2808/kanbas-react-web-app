@@ -5,7 +5,7 @@ import "./index.css"
 import db from "../../Database";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 
 

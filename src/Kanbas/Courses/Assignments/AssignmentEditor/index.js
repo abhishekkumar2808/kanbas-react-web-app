@@ -6,6 +6,7 @@ import {FaEllipsisVertical} from "react-icons/fa6"
 import "./index.css"
 import { useSelector, useDispatch } from "react-redux";
 import {updateAssignment, addAssignment, setAssignment} from "../assignmentsReducer";
+import * as services from "../services";
 
 function AssignmentEditor() {
 
@@ -15,7 +16,7 @@ function AssignmentEditor() {
   
   
   const assignment = useSelector((state) => state.assignmentsReducer.assignment);
-  const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+  //const assignments = useSelector((state) => state.assignmentsReducer.assignments);
   const dispatch = useDispatch();
 
   const { id } = useParams();
@@ -28,27 +29,25 @@ function AssignmentEditor() {
 
 
   const handleSave = () => {
-    console.log("dsfsdfsf: "+ courseNum)
-    console.log("ass id: "+assignment._id )
-    console.log("inside assing editor: "+ JSON.stringify(assignment))
+
 
     if(assignment._id){
-      dispatch(updateAssignment(assignment))
-      console.log("full array edit: "+ JSON.stringify(assignments))
+      //dispatch(updateAssignment(assignment))
+      console.log("uppdate here")
+      services.updateAssignment(assignment._id, assignment)
+        .then(() =>{ console.log("to be updated assingment: "+ JSON.stringify(assignment));dispatch(updateAssignment(assignment)) });
     }
       
-    else
-    {console.log("inside assing addigng loop: "+ JSON.stringify(assignment))
-
-      dispatch(addAssignment({...assignment, course: courseNum}))
-      console.log("full array add: "+ JSON.stringify(assignments))
-      
+    else{
+      // dispatch(addAssignment({...assignment, course: courseNum}))
+      services.createAssignment(courseNum, assignment)
+          .then((newAssignment) =>{ dispatch(addAssignment({...newAssignment, course: courseNum})) });
     }
 
     dispatch(setAssignment({ title: "New assignment", description: "New Description", points:"", dueDate: "", availableFromDate:"", availableUntilDate:""}))
-    console.log("after edit/add assigmnet var: "+ JSON.stringify(assignment));
     navigate(`/Kanbas/Courses/${id}/Assignments`);
   };
+
   return (
     <div>
         <div className="top-header-container">
@@ -68,13 +67,13 @@ function AssignmentEditor() {
 
 
       <label htmlFor="title"><h5>Assignment Name</h5></label>
-      <input value={assignment.title} id="title"
+      <input placeholder={assignment.title} id="title" required
              className="form-control mb-2" onChange={(e) => dispatch(setAssignment({ ...assignment, title: e.target.value })) }/>
       
       <br/> 
       <label htmlFor="description"><h5>Assignment Description</h5></label>  
       <br/>  
-      <textarea rows="5" className="border" id="description" style={{width:"100%", borderRadius:6}} value={(assignment.description)?assignment.description : "" } onChange={(e) => dispatch(setAssignment({ ...assignment, description: e.target.value })) }>New Assignment description</textarea>
+      <textarea rows="5" required className="border" id="description" style={{width:"100%", borderRadius:6}} placeholder={(assignment.description)?assignment.description : "" } onChange={(e) => dispatch(setAssignment({ ...assignment, description: e.target.value })) }></textarea>
       
       
       
@@ -86,7 +85,7 @@ function AssignmentEditor() {
               <label htmlFor="points"><h5 style={{margin:0}}>Points</h5></label>
           </div>
           <div className="col-7">
-              <input value={(assignment.points)?assignment.points : "" } id="points" placeholder="eg: 87/100"
+              <input value={(assignment.points)?assignment.points : "" } id="points" placeholder="eg: 87/100" 
              className="form-control mb-2" onChange={(e) => dispatch(setAssignment({ ...assignment, points: e.target.value })) } />
           </div>
       </div>

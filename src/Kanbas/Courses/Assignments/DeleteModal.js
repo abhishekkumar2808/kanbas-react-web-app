@@ -1,5 +1,6 @@
 import { deleteAssignment, setAssignment} from "./assignmentsReducer";
 import { useDispatch } from "react-redux";
+import * as service from "./services"
 
 
 function DeleteModal({showDeleteModal, setShowDeleteModal, assignment}) {
@@ -29,7 +30,9 @@ function DeleteModal({showDeleteModal, setShowDeleteModal, assignment}) {
                                 <button type="button" className="btn btn-primary" style={{width:"15%"}}
                                  onClick={
                                     () =>{
-                                        dispatch(deleteAssignment(assignment._id));
+                                        service.deleteAssignment(assignment._id)
+                                            .then(() =>{dispatch(deleteAssignment(assignment._id));})
+                                        
                                         dispatch(setAssignment({ title: "New assignment", description: "New Description", dueDate: "", availableFromDate:"", availableUntilDate:""}))
                                         setShowDeleteModal(!showDeleteModal)
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import db from "../../Database";
 
@@ -7,7 +7,8 @@ import {FaCheck, FaPlus} from "react-icons/fa"
 import "./index.css"
 import DeleteModal from "./DeleteModal";
 import { useSelector, useDispatch } from "react-redux";
-import { setAssignment } from "./assignmentsReducer";
+import { setAssignment, setAssignments } from "./assignmentsReducer";
+import { getAssignments } from "./services";
 
 
 function Assignments() {
@@ -19,7 +20,19 @@ function Assignments() {
   const courseID = db.courses.find((course)=>(course._id === id))
   const courseNum = courseID.number;
 
+  useEffect(()=>{
+    getAssignments(courseNum)
+    .then((assignments) => {
+            dispatch(setAssignments(assignments))
+    })
+
+
+  },[courseNum])
+
+  
+
   const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+
   const assignment = useSelector((state) => state.assignmentsReducer.assignment);
 
   const courseAssignments = assignments.filter(
@@ -89,18 +102,18 @@ function Assignments() {
                                                                     <div style={{margin:3,marginRight:10}}>
                                                                             <button className="btn btn-danger"  style={{width:"70px", marginRight:5}}
                                                                             onClick={(e) =>{
+
                                                                                 e.preventDefault();
-                                                                                dispatch(setAssignment(assign))
-                                                                                setShowDeleteModal(!showDeleteModal)
+                                                                                dispatch(setAssignment(assign));
+                                                                                setShowDeleteModal(!showDeleteModal);
+
                                                                             }}>Delete</button>
+
                                                                             <button className="btn btn-warning" style={{width:"70px"}}
                                                                              onClick={(e) =>{
                                                                                 
                                                                                 dispatch(setAssignment(assign));
-
-                                                                                
-                                                                                
-                                                                             }
+                                                                            }
                                                                                 
                                                                              }
                                                                              >Edit</button>
