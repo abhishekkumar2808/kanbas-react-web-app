@@ -17,7 +17,7 @@ function Kanbas() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [courses, setCourses] = useState([]);
 
-  const URL = "http://localhost:4000/api/courses";
+  const URL = "https://kanbas-node-server-app-pjfc.onrender.com/api/courses";
 
   const findAllCourses = async () => {
 
