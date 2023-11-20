@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 
-const COURSES_URL = "http://localhost:4000/api/courses";
+const COURSES_URL = "https://kanbas-node-server-app-pjfc.onrender.com/api/courses";
 const MODULES_URL = "https://kanbas-node-server-app-pjfc.onrender.com/api/modules";
 
 export const findModulesForCourse = async (courseId) => {

@@ -18,7 +18,7 @@ function Dashboard({courses, setCourses}) {
 
   })
 
-  const URL = "http://localhost:4000/api/courses";
+  const URL = "https://kanbas-node-server-app-pjfc.onrender.com/api/courses";
 
 
 
