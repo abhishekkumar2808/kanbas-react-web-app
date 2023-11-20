@@ -30,6 +30,6 @@ export const deleteAssignment = async (assignmentID) => {
 
 export const updateAssignment = async (assignmentID, assign) => {
 
-    const response = await axios.put(`${ASSIGNMENT_URL}/${assignmentID}`, assign);
+    const response = await axios.put(`${ASSIGNMENT_URL}/${assignmentID}`, assign); 
     return response.data;
 }
