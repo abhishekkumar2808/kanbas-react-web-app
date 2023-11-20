@@ -3,7 +3,7 @@ import axios from "axios";
 const API_BASE = process.env.REACT_APP_API_BASE;
 const COURSES_URL = `${API_BASE}/courses`
 const ASSIGNMENT_URL = `${API_BASE}/assignments`
-
+ 
 export const getAssignments = async (courseID) => {
 
     const response = await axios.get(`${COURSES_URL}/${courseID}/assignments`);
