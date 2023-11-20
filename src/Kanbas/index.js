@@ -5,7 +5,6 @@ import Courses from "./Courses/index.js";
 import Account from "./Account/index.js";
 import React, { useState, useEffect } from 'react';
 import Sidebar from "./Sidebar";
-import db from "./Database";
 import { Provider } from "react-redux";
 import store from "./store/index.js";
 import axios from "axios";
@@ -17,7 +16,8 @@ function Kanbas() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [courses, setCourses] = useState([]);
 
-  const URL = "https://kanbas-node-server-app-pjfc.onrender.com/api/courses";
+  const API_BASE = process.env.REACT_APP_API_BASE;
+  const URL = `${API_BASE}/courses`;
 
   const findAllCourses = async () => {
 

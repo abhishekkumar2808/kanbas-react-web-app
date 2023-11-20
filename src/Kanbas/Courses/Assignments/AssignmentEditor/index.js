@@ -10,11 +10,6 @@ import * as services from "../services";
 
 function AssignmentEditor() {
 
-
-
-
-  
-  
   const assignment = useSelector((state) => state.assignmentsReducer.assignment);
   //const assignments = useSelector((state) => state.assignmentsReducer.assignments);
   const dispatch = useDispatch();
