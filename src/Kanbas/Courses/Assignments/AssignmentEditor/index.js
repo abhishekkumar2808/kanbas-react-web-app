@@ -52,7 +52,7 @@ function AssignmentEditor({course}) {
                                 <div className="icons">
                                     <FaRegCheckCircle class="fa-solid fa-check" style={{color:"#24c421", marginRight:5}}/>
                                     <span style={{marginBottom:0, color:"#24c421" ,marginRight:5}}>Published</span>
-                                    <a class="btn btn-light text-nowrap"  href="index.html" role="button"><FaEllipsisVertical/></a>
+                                    <a class="btn btn-light text-nowrap"  href="index.html" role="button"><FaEllipsisVertical/></a> 
                                         
                                 </div>
         </div>
