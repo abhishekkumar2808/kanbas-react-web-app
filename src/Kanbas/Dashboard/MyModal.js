@@ -30,7 +30,7 @@ const MyModal = ({showModal, setShowModal, type, data, setNewCourse, courses, se
 
     const editFunc =async () => {
 
-        console.log(JSON.stringify(data));
+ 
         
 
         setShowModal(false);

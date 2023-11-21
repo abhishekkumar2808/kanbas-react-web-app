@@ -62,7 +62,7 @@ function AssignmentEditor() {
 
 
       <label htmlFor="title"><h5>Assignment Name</h5></label>
-      <input placeholder={assignment.title} id="title" required
+      <input value={assignment.title} id="title" required
              className="form-control mb-2" onChange={(e) => dispatch(setAssignment({ ...assignment, title: e.target.value })) }/>
       
       <br/> 
