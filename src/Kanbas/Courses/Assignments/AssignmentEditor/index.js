@@ -8,18 +8,18 @@ import { useSelector, useDispatch } from "react-redux";
 import {updateAssignment, addAssignment, setAssignment} from "../assignmentsReducer";
 import * as services from "../services";
 
-function AssignmentEditor() {
+function AssignmentEditor({course}) {
 
   const assignment = useSelector((state) => state.assignmentsReducer.assignment);
-  //const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+
   const dispatch = useDispatch();
 
-  const { id } = useParams();
+  // const { id } = useParams();
   const navigate = useNavigate();
 
   
-  const courseID = db.courses.find((course)=>(course._id === id))
-  const courseNum = courseID.number;
+  // const courseID = db.courses.find((course)=>(course._id === id))
+  const courseNum = course.number;
 
 
 
@@ -40,7 +40,7 @@ function AssignmentEditor() {
     }
 
     dispatch(setAssignment({ title: "New assignment", description: "New Description", points:"", dueDate: "", availableFromDate:"", availableUntilDate:""}))
-    navigate(`/Kanbas/Courses/${id}/Assignments`);
+    navigate(`/Kanbas/Courses/${course._id}/Assignments`);
   };
 
   return (
@@ -68,7 +68,7 @@ function AssignmentEditor() {
       <br/> 
       <label htmlFor="description"><h5>Assignment Description</h5></label>  
       <br/>  
-      <textarea rows="5" required className="border" id="description" style={{width:"100%", borderRadius:6}} placeholder={(assignment.description)?assignment.description : "" } onChange={(e) => dispatch(setAssignment({ ...assignment, description: e.target.value })) }></textarea>
+      <textarea rows="5" required className="border" id="description" style={{width:"100%", borderRadius:6}} value={(assignment.description)?assignment.description : "" } onChange={(e) => dispatch(setAssignment({ ...assignment, description: e.target.value })) }></textarea>
       
       
       
@@ -121,7 +121,7 @@ function AssignmentEditor() {
     <hr/>
 
     <div className="cancel-save" >
-            <Link to={`/Kanbas/Courses/${id}/Assignments`} 
+            <Link to={`/Kanbas/Courses/${course._id}/Assignments`} 
                     className="btn btn-danger" style={{marginRight:5, width:"8%"}}>
                 Cancel
             </Link>

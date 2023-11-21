@@ -9,7 +9,7 @@ function CourseNavigation({navItem, setNavItem}) {
     const navbarItems =[ "Home",  "Modules", "Piazza", "Zoom Meetings", "Assignments", "Quizzes", "Grades", "People", "Panapto Video", "Discussions", "Anouncements", "Pages", "Files", "Rubrics", "Outcomes", "Collaborations", "Syllabus", "Settings",
    
 ]
-console.log(pathname)
+
 
     return (
         <div className="wd-sidebar">

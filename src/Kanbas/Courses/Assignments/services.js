@@ -8,7 +8,7 @@ export const getAssignments = async (courseID) => {
 
     const response = await axios.get(`${COURSES_URL}/${courseID}/assignments`);
 
-    console.log("assingments in services: "+ response.data)
+
     return response.data;
 
 };

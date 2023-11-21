@@ -35,7 +35,7 @@ function Kanbas() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  console.log("kanbas coursees props: "+ courses)
+
 
   return (
     <Provider store={store}>

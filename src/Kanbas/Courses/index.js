@@ -35,12 +35,6 @@ function Courses({courses}) {
 
 
 
-  
-
-
-  console.log("course page courses props: "+ courses)
-  // const [tempCourses, settempCourses] = useState(courses);
-
 
 
   return (
@@ -87,8 +81,8 @@ function Courses({courses}) {
                               <Route path="/" element={<Navigate to="Home" />} />
                               <Route path="/Home" element={<Home course={course}/>} />
                               <Route path="/Modules" element={<Modules course={course}/>} />
-                              <Route path="/Assignments" element={<Assignments/>} />
-                              <Route path="/Assignments/:assignmentId" element={<AssignmentEditor/>}/>
+                              <Route path="/Assignments" element={<Assignments course={course}/>} />
+                              <Route path="/Assignments/:assignmentId" element={<AssignmentEditor course={course}/>}/>
                               <Route path="/Grades" element={<Grades />} />
                             </Routes>
                       </div>

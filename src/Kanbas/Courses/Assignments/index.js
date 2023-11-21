@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams} from "react-router-dom";
 import db from "../../Database";
-
 import {FaEllipsisVertical} from "react-icons/fa6"
 import {FaCheck, FaPlus} from "react-icons/fa"
 import "./index.css"
@@ -11,14 +10,22 @@ import { setAssignment, setAssignments } from "./assignmentsReducer";
 import { getAssignments } from "./services";
 
 
-function Assignments() {
+function Assignments({course}) {
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
+//   const { id } = useParams();
+//   console.log("id: "+ id)
+//   const courseID = db.courses.find((course)=>(course._id === id))
+   console.log("courseID: "+ JSON.stringify(course))
+  const courseNum = course.number;
 
+  const [searchAssignment, setSearchAssignment] = useState("");
+  const [dispAssigment, setDispAssignment] = useState([]);
 
-  const { id } = useParams();
-  const courseID = db.courses.find((course)=>(course._id === id))
-  const courseNum = courseID.number;
+const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+
+  const assignment = useSelector((state) => state.assignmentsReducer.assignment);
+
 
   useEffect(()=>{
     getAssignments(courseNum)
@@ -29,16 +36,34 @@ function Assignments() {
 
   },[courseNum])
 
-  
-
-  const assignments = useSelector((state) => state.assignmentsReducer.assignments);
-
-  const assignment = useSelector((state) => state.assignmentsReducer.assignment);
-
   const courseAssignments = assignments.filter(
     (assignment) => assignment.course === courseNum);
 
+    useEffect(()=>{
+
+        if(searchAssignment === ""){
+
+            setDispAssignment([...courseAssignments]);
+            console.log("inside if: "+ JSON.stringify(dispAssigment))
+        }
+            
+        else{
+            const tempAssignments = courseAssignments.filter((a) => a.title.toLowerCase().startsWith(searchAssignment.toLowerCase()) )
+            console.log("temp ass: "+ JSON.stringify(tempAssignments))
+            if(tempAssignments.length){
+                setDispAssignment([...tempAssignments])
+            }
+            else{
+                setDispAssignment([]);
+            }
+        }
+        }, [searchAssignment, assignments])
+
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+
+  console.log("searchASS: "+ searchAssignment)
+  console.log("courseAss: "+ JSON.stringify(courseAssignments))
+  console.log("dispAsss: "+ JSON.stringify(dispAssigment))
   
 
 
@@ -46,12 +71,16 @@ function Assignments() {
     <>
             {showDeleteModal && <DeleteModal showDeleteModal={showDeleteModal} setShowDeleteModal={setShowDeleteModal} assignment={assignment}/>}
             <div>
-            <h2>Assignments for course <span style={{color:"red"}}>{courseID.name}</span></h2>
+
+            <h2>Assignments for course <span style={{color:"red"}}>{course.name}</span></h2>
+
             <div className="search-bar">
-                    <input type="text" className="form-control w-25" placeholder="Search for Assignment"/>
+
+                    <input type="text" onChange={(e) => setSearchAssignment(e.target.value) } className="form-control w-25" placeholder="Search for Assignment" value={searchAssignment} />
+
                     <div className="float-end">
                         <button className="btn btn-light text-nowrap"   >+Group</button> 
-                        <Link to={`/Kanbas/Courses/${id}/Assignments/${assignment._id}`}>
+                        <Link to={`/Kanbas/Courses/${course._id}/Assignments/${assignment._id}`}>
                             <button className="btn text-nowrap" style={{backgroundColor:"#566E3D", color:"white"}}
                                 onClick={() =>
                                 dispatch(setAssignment(
@@ -94,10 +123,10 @@ function Assignments() {
                                     </div>
 
                                     {
-                                        courseAssignments.map((assign) => (
+                                        dispAssigment.map((assign) => (
                                                 <Link
                                                     key={assign._id}
-                                                    to={`/Kanbas/Courses/${id}/Assignments/${assign._id}`}
+                                                    to={`/Kanbas/Courses/${course._id}/Assignments/${assign._id}`}
                                                     onClick={() => dispatch(setAssignment({...assign,}))}
                                                     style={{textDecoration:"none"}}
                                                 >
@@ -113,7 +142,7 @@ function Assignments() {
                                                                 <div className="icon-end">
 
                                                                     <div style={{margin:3,marginRight:10}}>
-                                                                            <button className="btn btn-danger"  style={{width:"70px", marginRight:5}}
+                                                                            <button className="btn btn-danger btn-sm"  style={{width:"70px", marginRight:8}}
                                                                             onClick={(e) =>{
 
                                                                                 e.preventDefault();
@@ -122,7 +151,7 @@ function Assignments() {
 
                                                                             }}>Delete</button>
 
-                                                                            <button className="btn" style={{width:"70px", backgroundColor:"#DFE0E2"}}
+                                                                            <button className="btn btn-sm" style={{width:"70px", backgroundColor:"#DFE0E2"}}
                                                                              onClick={(e) =>{
                                                                                 
                                                                                 dispatch(setAssignment(assign));
@@ -143,31 +172,9 @@ function Assignments() {
                                                 </Link>
                                         ))
                                     }
-
-                                    
-                                    
-
-
-                                                    
-                                                    
-                                                    
-                                                    
-
                             </div> 
                     </div>
-
-
-
                 </div>
-
-
-
-
-
-
-
-
-
             </div>
 
     </>
