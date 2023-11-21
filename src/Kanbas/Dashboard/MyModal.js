@@ -2,7 +2,8 @@ import axios from "axios";
 
 const MyModal = ({showModal, setShowModal, type, data, setNewCourse, courses, setCourses}) => {
 
-  const URL = "http://localhost:4000/api/courses";
+  const API_BASE = process.env.REACT_APP_API_BASE;
+  const URL = `${API_BASE}/courses`;
   
     const resetData =() =>{
         const t = {

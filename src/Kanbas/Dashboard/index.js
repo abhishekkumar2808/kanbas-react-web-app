@@ -6,7 +6,7 @@ import axios from "axios";
 
 
 function Dashboard({courses, setCourses}) {
-  // const [courses, setCourses] = useState(db.courses);
+
   const [showModal, setShowModal] = useState(false);
   const[showAddModal, setShowAddModal] = useState(false);
   const [newCourse, setNewCourse] = useState({
@@ -20,6 +20,7 @@ function Dashboard({courses, setCourses}) {
 
   const API_BASE = process.env.REACT_APP_API_BASE;
   const URL = `${API_BASE}/courses`;
+
 
 
 
