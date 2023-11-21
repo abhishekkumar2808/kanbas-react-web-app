@@ -27,7 +27,7 @@ function Modules({course}) {
                                             <button className="btn btn-light text-nowrap"  >Collapse All</button>
                                             <button className="btn btn-light text-nowrap"  >View Progress</button>
                                             <button className="btn btn-light text-nowrap"  ><FaRegCheckCircle style={{color:"#24c421"}}/> Publish All</button>
-                                            <button className="btn btn-success text-nowrap" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => setShowModal(!showModal)} >+ Module</button>
+                                            <button className="btn text-nowrap" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{backgroundColor:"#566E3D", color:"white"}} onClick={() => setShowModal(!showModal)} >+ Module</button>
                                             <button className="btn btn-light text-nowrap"  ><FaEllipsisVertical/></button>
                                                 
             

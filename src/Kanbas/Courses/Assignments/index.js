@@ -51,7 +51,20 @@ function Assignments() {
                     <input type="text" className="form-control w-25" placeholder="Search for Assignment"/>
                     <div className="float-end">
                         <button className="btn btn-light text-nowrap"   >+Group</button> 
-                        <Link to={`/Kanbas/Courses/${id}/Assignments/${assignment._id}`}><button className="btn btn-success text-nowrap" onClick={() => dispatch(setAssignment({ title: "New assignment", description: "New Description",points:"", dueDate: "", availableFromDate:"", availableUntilDate:""}))}>+ Assignment</button></Link>
+                        <Link to={`/Kanbas/Courses/${id}/Assignments/${assignment._id}`}>
+                            <button className="btn text-nowrap" style={{backgroundColor:"#566E3D", color:"white"}}
+                                onClick={() =>
+                                dispatch(setAssignment(
+                                    {   title: "New assignment", 
+                                        description: "New Description",
+                                        points:"", 
+                                        dueDate: "", 
+                                        availableFromDate:"", 
+                                        availableUntilDate:""
+                                    }
+                                    ))}>+ Assignment</button>
+                        </Link>
+
                         <button className="btn btn-light text-nowrap"  ><FaEllipsisVertical/></button> 
                     </div>
                 </div>
@@ -109,7 +122,7 @@ function Assignments() {
 
                                                                             }}>Delete</button>
 
-                                                                            <button className="btn btn-primary" style={{width:"70px"}}
+                                                                            <button className="btn" style={{width:"70px", backgroundColor:"#DFE0E2"}}
                                                                              onClick={(e) =>{
                                                                                 
                                                                                 dispatch(setAssignment(assign));

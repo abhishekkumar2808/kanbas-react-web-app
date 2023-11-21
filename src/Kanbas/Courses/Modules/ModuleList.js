@@ -66,14 +66,14 @@ function ModuleList({course, showModal, setShowModal}) {
                                 <div className="module-name-icons-buttons">
                                   <div style={{marginRight:10, margin:10}}>
                                     <button className="btn btn-danger" onClick={() => deleteModuleHandler(mod._id)} style={{width:"70px"}}>Delete</button>
-                                    <button className="btn btn-primary" 
+                                    <button className="btn " 
                                     onClick={() =>{
                                         
                                         dispatch(setModule(mod))
                                         setEditModal(!editModal)
                                       }
                                       
-                                      } style={{width:"70px"}}>Edit</button>
+                                      } style={{width:"70px", backgroundColor:"#DFE0E2"}}>Edit</button>
                                   </div>
                                 
                                   <FaCheck style={{color:"#24c421"}}/>
@@ -82,7 +82,7 @@ function ModuleList({course, showModal, setShowModal}) {
                                 
                             </div>
                             <div className="module-desc" style={{padding:6}}>
-                                <p>{mod.description}</p>
+                                <p style={{margin:8, marginLeft:7}}>{mod.description}</p>
                             </div>
 
                         </div>

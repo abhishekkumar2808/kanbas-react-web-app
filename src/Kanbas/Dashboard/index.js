@@ -44,7 +44,7 @@ function Dashboard({courses, setCourses}) {
       <hr/>
       <div className="card-buttons-container">
          <h2>Published Courses({courses.length})</h2>
-         <button className="btn btn-success"
+         <button className="btn " style={{color:"white", backgroundColor:"#566E3D"}}
           onClick={
                         (event) => {
                           console.log("state value:"+ showModal)
@@ -73,7 +73,7 @@ function Dashboard({courses, setCourses}) {
                           deleteCourse(course._id)}
                         }>Delete</button>
 
-                      <button style={{width:"47%"}}  className="btn btn-primary" 
+                      <button style={{width:"47%", backgroundColor:"#C0C0C0"}}  className="btn " 
                       onClick={
                         (event) => {
                           console.log("state value:"+ showModal)

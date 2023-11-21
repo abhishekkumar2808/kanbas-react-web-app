@@ -18,10 +18,13 @@
 }
 
 .module-name {
-    background-color: rgb(221, 203, 203);
+    background-color: #8d8d8d;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    color: white;
+    padding-left: 7px;
+    padding-right: 3px;
 }
 
 .module-name h3 {
