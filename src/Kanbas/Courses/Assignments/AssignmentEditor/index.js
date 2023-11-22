@@ -1,6 +1,5 @@
 import React from "react";
-import { useNavigate, useParams, Link } from "react-router-dom";
-import db from "../../../Database";
+import { useNavigate, Link } from "react-router-dom";
 import {FaRegCheckCircle} from "react-icons/fa"
 import {FaEllipsisVertical} from "react-icons/fa6"
 import "./index.css"
@@ -14,11 +13,10 @@ function AssignmentEditor({course}) {
 
   const dispatch = useDispatch();
 
-  // const { id } = useParams();
   const navigate = useNavigate();
 
   
-  // const courseID = db.courses.find((course)=>(course._id === id))
+
   const courseNum = course.number;
 
 
@@ -27,14 +25,13 @@ function AssignmentEditor({course}) {
 
 
     if(assignment._id){
-      //dispatch(updateAssignment(assignment))
       console.log("uppdate here")
       services.updateAssignment(assignment._id, assignment)
         .then(() =>{ console.log("to be updated assingment: "+ JSON.stringify(assignment));dispatch(updateAssignment(assignment)) });
     }
       
     else{
-      // dispatch(addAssignment({...assignment, course: courseNum}))
+    
       services.createAssignment(courseNum, assignment)
           .then((newAssignment) =>{ dispatch(addAssignment({...newAssignment, course: courseNum})) });
     }
@@ -52,7 +49,7 @@ function AssignmentEditor({course}) {
                                 <div className="icons">
                                     <FaRegCheckCircle class="fa-solid fa-check" style={{color:"#24c421", marginRight:5}}/>
                                     <span style={{marginBottom:0, color:"#24c421" ,marginRight:5}}>Published</span>
-                                    <a class="btn btn-light text-nowrap"  href="index.html" role="button"><FaEllipsisVertical/></a> 
+                                    <a className="btn btn-light text-nowrap"  href="index.html" role="button"><FaEllipsisVertical/></a> 
                                         
                                 </div>
         </div>

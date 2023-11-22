@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams} from "react-router-dom";
-import db from "../../Database";
+import { Link} from "react-router-dom";
 import {FaEllipsisVertical} from "react-icons/fa6"
 import {FaCheck, FaPlus} from "react-icons/fa"
 import "./index.css"
@@ -13,9 +12,7 @@ import { getAssignments } from "./services";
 function Assignments({course}) {
 
   const dispatch = useDispatch();
-//   const { id } = useParams();
-//   console.log("id: "+ id)
-//   const courseID = db.courses.find((course)=>(course._id === id))
+
    console.log("courseID: "+ JSON.stringify(course))
   const courseNum = course.number;
 
@@ -76,7 +73,7 @@ const assignments = useSelector((state) => state.assignmentsReducer.assignments)
 
             <div className="search-bar">
 
-                    <input type="text" onChange={(e) => setSearchAssignment(e.target.value) } className="form-control w-25" placeholder="Search for Assignment" value={searchAssignment} />
+                    <input type="text" style={{marginLeft:3}} onChange={(e) => setSearchAssignment(e.target.value) } className="form-control w-25" placeholder="Search for Assignment" value={searchAssignment} />
 
                     <div className="float-end">
                         <button className="btn btn-light text-nowrap"   >+Group</button> 

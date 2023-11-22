@@ -40,9 +40,11 @@ function Dashboard({courses, setCourses}) {
       <MyModal showModal={showAddModal} setShowModal={setShowAddModal} type="Add" setNewCourse={setNewCourse} data={newCourse} courses={courses} setCourses={setCourses}/>
 
       
-      <h2 style={{margin:0}}>Dashboard</h2>
-      <hr/>
-      <div className="card-buttons-container">
+      <h2 style={{marginTop:8}}>Dashboard</h2>
+
+      <hr style={{margin:0}}/>
+
+      <div className="card-buttons-container" style={{marginTop:8}}>
          <h2>Published Courses({courses.length})</h2>
          <button className="btn " style={{color:"white", backgroundColor:"#566E3D"}}
           onClick={
@@ -54,11 +56,11 @@ function Dashboard({courses, setCourses}) {
             }>+ Add Courses</button>
       </div>
       
-      <div className="row flex-wrap row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4" style={{marginBottom:10, marginLeft:0}}>
+      <div className="row flex-wrap  row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4" style={{marginBottom:10, marginLeft:0}}>
 
         {courses.map((course, index) => (
 
-          <Link key={course._id} to={`/Kanbas/Courses/${course._id}`} className="list-group-item" style={{width: "250px", marginRight: "20px"}}>
+          <Link key={course._id} to={`/Kanbas/Courses/${course._id}`} className="list-group-item " style={{width: "250px", marginRight: "20px"}}>
 
             <div className="card h-80" style={{width:"250px"}}>
                 <img src= {(course["img-url"])?`${course["img-url"]}`:`../../images/car.jpeg`} className="card-img-top" alt={course.name} style={{height:"140px"}} />
