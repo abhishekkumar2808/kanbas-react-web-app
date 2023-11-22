@@ -33,7 +33,7 @@ function Dashboard({courses, setCourses}) {
   }
 
 
-  return (
+    return (
     <div className="container-fluid">
       
       <MyModal showModal={showModal} setShowModal={setShowModal} type="Edit" setNewCourse={setNewCourse} data= {newCourse} courses={courses} setCourses={setCourses}/>
