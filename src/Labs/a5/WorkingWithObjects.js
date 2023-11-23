@@ -4,7 +4,8 @@ import axios from "axios";
 
 function WorkingWithObjects() {
 
-  
+  const API_BASE = process.env.REACT_APP_API_BASE;
+  let RL = `${API_BASE}`.replace("api","");
 
   const [assignment, setAssignment] = useState({
     id: 1,
@@ -15,7 +16,7 @@ function WorkingWithObjects() {
     score: 0,
   });
 
-  const URL = "http://localhost:4000/a5/assignment"
+  const URL = RL+"a5/assignment"
 
 
   const fetchAssignment = async () => {
