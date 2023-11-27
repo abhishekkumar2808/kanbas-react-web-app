@@ -16,7 +16,6 @@ function Labs() {
                         <Route path="a3" element={<Assignment3/>}/>
                         <Route path="a4" element={<Assignment4/>}/>
                         <Route path="a5" element={<Assignment5/>}/>
-
                   </Routes>
             </div>
       </Provider>
