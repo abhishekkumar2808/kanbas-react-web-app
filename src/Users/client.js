@@ -31,7 +31,7 @@ export const findAllUsers = async () => {
 };
 
 export const createUser = async (user) => {
-  const response = await request.post(`${USERS_API}`, user);
+  const response = await request.post(`${USERS_API}`, user); 
   return response.data;
 };
 
