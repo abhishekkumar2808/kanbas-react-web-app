@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import * as client from "../Users/client";
 import { BsTrash3Fill, BsPlusCircleFill, BsFillCheckCircleFill, BsPencil }
   from "react-icons/bs";
-import { useNavigate, Link } from "react-router-dom";
+import {Link } from "react-router-dom";
 
 function UserTable() {
 

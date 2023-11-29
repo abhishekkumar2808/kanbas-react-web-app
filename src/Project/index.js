@@ -16,6 +16,7 @@ function Project() {
     <div className="container-fluid">
 
             <h1>Project</h1>
+            <hr/>
 
             <div className="row">
 
@@ -34,7 +35,6 @@ function Project() {
                         <Route path="/login" element={<Login/>} />
                         <Route path="/signup" element={<Signup/>} />
                         <Route path="/admin/users" element={<UserTable/>} />
-
                     </Routes>
                 </div>
 
