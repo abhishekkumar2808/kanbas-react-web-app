@@ -10,8 +10,9 @@ function Signin() {
 
   const signin = async () => {
     
-    await client.signin(credentials);
-    navigate("/project/account");
+    console.log("creds", JSON.stringify(credentials))
+    const user = await client.signin(credentials);
+    navigate(`/project/account/${user._id}`);
   };
 
   return (

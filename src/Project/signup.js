@@ -15,8 +15,8 @@ function Signup() {
   const signup = async () => {
     try {
         console.log("before making api call: "+ JSON.stringify(credentials) );
-      await client.signup({...credentials, "_id": new Date().getTime().toString()});
-      navigate("/project/account");
+      const user = await client.signup({...credentials, "_id": new Date().getTime().toString()});
+      navigate(`/project/account/${user._id}`);
     } catch (err) {
       setError(err.response.data.message);
     }

@@ -51,6 +51,7 @@ export const signup = async (credentials) => {
 
   const response = await request.post(
     `${USERS_API}/signup`, credentials);
+    console.log("resp: ",response.data)
   return response.data;
 };
 
