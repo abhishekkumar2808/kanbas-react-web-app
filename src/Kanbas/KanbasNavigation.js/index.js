@@ -93,7 +93,7 @@ const navItems = [
                                         
                                         event.preventDefault();
                                         console.log("item: "+ item); 
-                                        navigate("/project/")
+                                        navigate("/")
                                     }
                                 ))
                                 }>
