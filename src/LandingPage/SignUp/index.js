@@ -19,22 +19,24 @@ function SignUp() {
     try {
         console.log("before making api call: "+ JSON.stringify(credentials) );
       const user = await client.signup({...credentials, "_id": new Date().getTime().toString()});
-      navigate(`/project/account/${user._id}`);
+      navigate("/Kanbas/Dashboard")
     } catch (err) {
-      setError(err.response.data.message);
+      //setError(err.response.data.message);
+      window.alert(err.response.data.message)
     }
   };
 
   return (
-    <>
+    
 
 
     <div className="card  shadow border-0">
             <div className="card-header " style={{backgroundColor:"#F3E5DD"}}>
                                 <h2 className="text-center ">Sign Up</h2>
             </div>
-          {error && <div style={{color:"red"}}>{error}</div>}
+          
           <form className="p-5" >
+          {error && <div className="d-flex align-items-center justify-content-center" style={{color:"red"}}>{error}</div>}
 
                   <div className="mb-3">
                       <label htmlFor="username" className="form-label">
@@ -50,7 +52,7 @@ function SignUp() {
                   </div>
 
                   <div className="text-center mb-2">
-                      <button className="btn btn-primary w-100"  onClick={() => {navigate("/Kanbas/Dashboard")}}>
+                      <button className="btn btn-primary w-100"  onClick={(e) => {e.preventDefault(); signup()}}>
                           <span><FiUserPlus style={{marginBottom:3, marginRight:2}}/> Sign Up</span>
                       </button>
                   </div>
@@ -71,7 +73,7 @@ function SignUp() {
 
 
 
-    </>
+
   );
 }
 export default SignUp;

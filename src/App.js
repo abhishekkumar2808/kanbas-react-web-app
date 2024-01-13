@@ -6,6 +6,7 @@ import {HashRouter} from "react-router-dom"
 import {Routes, Route} from "react-router";
 import Project from "./Project";
 import LandingPage from "./LandingPage";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
               <Route path="/project/*" element={<Project />} />
               <Route path="/hello"    element={<HelloWorld/>}/>
               <Route path="/Labs/*"   element={<Labs/>}/>
-              <Route path="/Kanbas/*" element={<Kanbas/>}/>
+              <Route path="/Kanbas/*" element={<ProtectedRoute><Kanbas/></ProtectedRoute>}/>
           </Routes>
 
       </div>  

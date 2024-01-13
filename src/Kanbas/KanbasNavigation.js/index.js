@@ -3,10 +3,15 @@ import "./index.css"
 import {FaUser, FaGaugeHigh, FaBook, FaCalendarDays, FaEnvelopeOpenText, FaClock, FaTv, FaArrowRight, } from "react-icons/fa6"
 import {FaQuestionCircle} from "react-icons/fa"
 import { FaSignOutAlt } from "react-icons/fa";
+import { useAuth } from "../../AuthContext";
+import AuthService from "../../AuthService";
+import { signin } from "../../Users/client";
 
 
 
 function KanbasNavigation({toggleSidebar, isSidebarOpen}) {
+
+    const { isSignedIn, setSignIn, isAdmin, setAdmin } = useAuth();
 
   const { pathname } = useLocation();
   console.log("pathname: ", );
@@ -93,6 +98,8 @@ const navItems = [
                                         
                                         event.preventDefault();
                                         console.log("item: "+ item); 
+                                        console.log("signin value while loggout: ", isSignedIn)
+                                        setSignIn(false)
                                         navigate("/")
                                     }
                                 ))

@@ -4,8 +4,13 @@ import * as client from "../../Users/client";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiUserPlus, FiLogIn } from "react-icons/fi";
+import { useAuth } from "../../AuthContext";
+import AuthService from "../../AuthService";
 
 function SignIn() {
+
+    const { isSignedIn, setSignIn, isAdmin, setAdmin } = useAuth();
+    console.log('singedin in login page: ', isSignedIn)
     const [credentials, setCredentials] = useState({ username: "", password: "" });
     
     const navigate = useNavigate();
@@ -16,6 +21,8 @@ function SignIn() {
       const user = await client.signin(credentials);
       if(user){
         console.log("user: ", user)
+        console.log("signin while signing in: ", isSignedIn)
+        setSignIn(true);
         navigate("/Kanbas/Dashboard")
       }
       else{
