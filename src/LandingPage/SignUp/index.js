@@ -18,8 +18,11 @@ function SignUp() {
   const signup = async () => {
     try {
         console.log("before making api call: "+ JSON.stringify(credentials) );
-      const user = await client.signup({...credentials, "_id": new Date().getTime().toString()});
-      navigate("/Kanbas/Dashboard")
+        if(credentials.username !== "" && credentials.password !== "") {
+          const user = await client.signup({...credentials, "_id": new Date().getTime().toString()});
+          navigate("/Kanbas/Dashboard")
+        }
+
     } catch (err) {
       //setError(err.response.data.message);
       window.alert(err.response.data.message)
