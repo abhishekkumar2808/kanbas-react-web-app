@@ -24,7 +24,7 @@ function SignUp() {
         }
 
     } catch (err) {
-      //setError(err.response.data.message);
+
       window.alert(err.response.data.message)
     }
   };
