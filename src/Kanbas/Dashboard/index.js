@@ -62,11 +62,11 @@ function Dashboard({courses, setCourses}) {
 
           <Link key={course._id} to={`/Kanbas/Courses/${course._id}`} className="list-group-item " style={{width: "250px", marginRight: "20px"}}>
 
-            <div className="card h-80" style={{width:"250px"}}>
+            <div className="card h-80 shadow border-0" style={{width:"250px"}}>
                 <img src= {(course["img-url"])?`${course["img-url"]}`:`../../images/car.jpeg`} className="card-img-top" alt={course.name} style={{height:"140px"}} />
                 <div className="card-body">
-                    <h5 className="card-title">{course.name}</h5>
-                    <p className="card-text">{course.number}</p>
+                    <h5 className="card-title">{course.number}<span> </span>{course.name}</h5>
+                    {/* <p className="card-text"></p> */}
                     <p className="card-text">{`Start Date: ${course.startDate}`}</p>
                     <div className="card-buttons-container">
                       <button style={{width:"47%"}} className="btn btn-danger" 

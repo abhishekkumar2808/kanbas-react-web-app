@@ -1,0 +1,10 @@
+.gradient-bg {
+    background: linear-gradient(to right, #f77062 , #ff6da7
+    ); /* Customize the gradient colors */
+    height: 100vh; /* Set the height to 100% of the viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* #fdd6bb #f9869f */

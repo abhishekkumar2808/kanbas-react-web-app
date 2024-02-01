@@ -5,17 +5,19 @@ import Kanbas from './Kanbas/index'
 import {HashRouter} from "react-router-dom"
 import {Routes, Route} from "react-router";
 import Project from "./Project";
+import LandingPage from "./LandingPage";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
     <HashRouter>
       <div>
           <Routes>
-              <Route path="/"           element={<Project />}/>
+              <Route path="/*"           element={<LandingPage />}/>
               <Route path="/project/*" element={<Project />} />
               <Route path="/hello"    element={<HelloWorld/>}/>
               <Route path="/Labs/*"   element={<Labs/>}/>
-              <Route path="/Kanbas/*" element={<Kanbas/>}/>
+              <Route path="/Kanbas/*" element={<ProtectedRoute><Kanbas/></ProtectedRoute>}/>
           </Routes>
 
       </div>  
@@ -25,3 +27,4 @@ function App() {
   );
 }
 export default App;
+ 

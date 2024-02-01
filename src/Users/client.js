@@ -5,10 +5,10 @@ const request = axios.create({
 });
 
 
-export const BASE_API = process.env.REACT_APP_BASE_API_URL;
-export const USERS_API = `${BASE_API}/api/users`;
+const BASE_API = process.env.REACT_APP_BASE_API_URL;
+const USERS_API = `${BASE_API}/api/users`;
 
-export const signin = async (credentials) => {
+export const signin = async (credentials) => { 
     
   const response = await request.post( `${USERS_API}/signin`, credentials );
   return response.data;
@@ -31,7 +31,7 @@ export const findAllUsers = async () => {
 };
 
 export const createUser = async (user) => {
-  const response = await request.post(`${USERS_API}`, user);
+  const response = await request.post(`${USERS_API}`, user); 
   return response.data;
 };
 
@@ -51,6 +51,7 @@ export const signup = async (credentials) => {
 
   const response = await request.post(
     `${USERS_API}/signup`, credentials);
+    console.log("resp: ",response.data)
   return response.data;
 };
 

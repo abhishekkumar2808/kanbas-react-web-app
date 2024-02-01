@@ -84,10 +84,10 @@ const MyModal = ({showModal, setShowModal, type, data, setNewCourse, courses, se
                 </form>
             </div>
             <div className="modal-footer">
-              <button type="button" style={{width:"20%"}} className="btn btn-secondary" onClick={() => {resetData(); setShowModal(false);}}>
+              <button type="button" style={{width:"20%" , backgroundColor:"#C0C0C0"}} className="btn " onClick={() => {resetData(); setShowModal(false);}}>
                 Close
               </button>
-              <button type="button" style={{width:"20%"}} className="btn btn-primary" onClick={(event) =>{
+              <button type="button" style={{width:"20%" }} className="btn btn-primary" onClick={(event) =>{
                 event.preventDefault();
                 if(type === "Add"){
                     addFunc();
